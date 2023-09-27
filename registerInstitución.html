@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <!-- Navbar (reutilizamos el mismo navbar) -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#" class="button">Iniciar sesión</a></li>
+      <li><a href="#" class="button">Registrarse</a></li>
+      <li><img src="C:\Users\Luisa\Pictures\Screenshots\Captura de pantalla 2023-09-26 181810.png" alt="Imagen" class="navbar-image"></li>
+    </ul>
+  </nav>
+  <br><br><br><br><br><br>
+  <!-- Contenido centrado -->
+  <div class="centered-div1">
+    <form class="registration-form">
+      <div class="form-group">
+        <h2>Crea tu cuenta institución</h2>
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" class="rounded-input" required>
+      </div>
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" class="rounded-input" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Correo Electrónico:</label>
+        <input type="text" id="email" name="email" class="rounded-input" required>
+      </div>
+      <div class="form-group">
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" class="rounded-input" required>
+      </div>
+      <div class="form-group">
+        <label for="verificacion">Verificación de Contraseña:</label>
+        <input type="password" id="verificacion" name="verificacion" class="rounded-input" required>
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripción de la Institución:</label>
+        <input type="text" id="descripcion" name="descripcion" class="rounded-input" required>
+      </div>
+      <div class="form-group">
+        <label for="logo">Logo:</label>
+        <input type="file" id="logo" name="logo" accept="image/*" class="file-input" required>
+      </div>
+      <a href="#" class="button register-button">Registrarse</a>
+    </form>
+  </div>
+</body>
+</html>
