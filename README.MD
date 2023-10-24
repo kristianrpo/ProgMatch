@@ -26,6 +26,9 @@ Basados en el principio de la arquitectura limpia y la convergencia de la misma 
 - Reutilizar codigo siempre en la medida de lo posible, aplicando el principio DRY.
 - Cada uno cree su propio entorno virtual, activenlo y descarguen las dependencias, de la siguiente forma:
     ```python -m venv venv```
+    <br/>
     ```./venv/Scripts/activate```
+    <br/>
     ```pip install -r requirements.txt```
+    <br/>
 - A la hora de crear una aplicación/componente en Django por algún motivo, en el archivo 'base' en config/settings, en 'INSTALLED_APPS', agregar 'components.nombre_nueva_aplicación', y además, dentro de la aplicación creada, en el archivo "apps.py", modificar la variable "name" por name = 'components.nombre_nueva_aplicación'.
