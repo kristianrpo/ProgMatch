@@ -18,13 +18,13 @@ Basados en el principio de la arquitectura limpia y la convergencia de la misma 
 
 - Se hará uso del "lowerCamelCase" para la escritura de todo el proyecto.
 - Se documentará el proyecto con el formato "Docstring", donde en general, se busca tener en cuenta las siguientes aspectos (informese más en el siguiente link: https://pywombat.com/articles/docstring-python):
-        - Para poder documentar nuestro código vamos a colocar, en la primera línea del cuerpo de la función, un comentario con triple comillas simples, o tiple comillas dobles. Por convención será triple comillas dobles.
-        - Este comentario deberá cumplir con los siguientes puntos.
-            - La primera línea debe poseer una breve descripción del funcionamiento del código.
-            - Las descripciones deben comenzar con mayúscula y finalizar con punto.
-            - Si existen más líneas, la segunda deberá ser un espacio en blanco, de tal forma que sea fácil distinguir entre la descripción y el resto del comentario.
-            - Las siguientes líneas deben ser uno o más párrafos que describan las convenciones de llamada del objeto.
-            - A este de comentario los conoceremos como docstring (documentation string) Un comentario con triple comillas dobles, o simples, en la primera línea del bloque del objeto.
+    - Para poder documentar nuestro código vamos a colocar, en la primera línea del cuerpo de la función, un comentario con triple comillas simples, o tiple comillas dobles. Por convención será triple comillas dobles.
+    - Este comentario deberá cumplir con los siguientes puntos:
+        - La primera línea debe poseer una breve descripción del funcionamiento del código.
+        - Las descripciones deben comenzar con mayúscula y finalizar con punto.
+        - Si existen más líneas, la segunda deberá ser un espacio en blanco, de tal forma que sea fácil distinguir entre la descripción y el resto del comentario.
+        - Las siguientes líneas deben ser uno o más párrafos que describan las convenciones de llamada del objeto.
+        - A este de comentario los conoceremos como "Docstring" (documentation string) Un comentario con triple comillas dobles, o simples, en la primera línea del bloque del objeto.
 - Como generalidad, y aplicando los conceptos de codigo limpio, se recomienda utilizar **clases genericas de django**, las cuales nos permiten obtener un codigo mas organizado y haciendo uso de la programación orientada objetos que nos brinda el framework (siempre que exista la posibilidad de utilizarlas en la parte logica de la aplicación). Además, permite mantener el codigo simple y entendible para el equipo de desarrollo.
 - Reutilizar codigo siempre en la medida de lo posible, aplicando el principio DRY.
 - Cada uno cree su propio entorno virtual, activenlo y descarguen las dependencias, de la siguiente forma:
