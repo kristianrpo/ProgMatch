@@ -10,8 +10,8 @@ Basados en el principio de la arquitectura limpia y la convergencia de la misma 
     - **'useCases'**: Aquí se define la parte logica de la aplicación. Es lo que en el framework definiriamos en el archivo "views.py" de cada componente. Pero ahora, los definiremos dentro de esta carpeta, y luego se instanceará al archivo "views.py" de cada componente.
 - **'presentation'**: Es la capa que interactua con el usuario. Dentro de esta, se encuentran la carpeta:
     -**'UI'**: Es todo lo que ve el usuario de la aplicación, esta carpeta a su vez, contiene:
-        -**'staticFiles'**: Aquí se guardara todos los archivos estáticos tales como los CSS, JS e imagenes de cada uno de los componentes. Son archivos que se definen inicialmente y no cambian durante la ejecución de la aplicación.
-        -**'templates'**: Se encuentran todos las plantillas HTML que se presentan al usuario en cada una de las secciones de la aplicación
+        - **'staticFiles'**: Aquí se guardara todos los archivos estáticos tales como los CSS, JS e imagenes de cada uno de los componentes. Son archivos que se definen inicialmente y no cambian durante la ejecución de la aplicación.
+        - **'templates'**: Se encuentran todos las plantillas HTML que se presentan al usuario en cada una de las secciones de la aplicación
 ### Generalidades a tener en cuenta
 - Se hará uso del "lowerCamelCase" para la escritura de todo el proyecto.
 - Se documentará el proyecto con el formato "Docstring", donde en general, se busca tener en cuenta las siguientes aspectos (informese más en el siguiente link: https://pywombat.com/articles/docstring-python):
@@ -25,10 +25,7 @@ Basados en el principio de la arquitectura limpia y la convergencia de la misma 
 - Como generalidad, y aplicando los conceptos de codigo limpio, se recomienda utilizar **clases genericas de django**, las cuales nos permiten obtener un codigo mas organizado y haciendo uso de la programación orientada objetos que nos brinda el framework (siempre que exista la posibilidad de utilizarlas en la parte logica de la aplicación). Además, permite mantener el codigo simple y entendible para el equipo de desarrollo.
 - Reutilizar codigo siempre en la medida de lo posible, aplicando el principio DRY.
 - Cada uno cree su propio entorno virtual, activenlo y descarguen las dependencias, de la siguiente forma:
-    ```python -m venv venv
-    ```
-    ```./venv/Scripts/activate
-    ```
-    ```pip install -r requirements.txt
-    ```
+    ```python -m venv venv```
+    ```./venv/Scripts/activate```
+    ```pip install -r requirements.txt```
 - A la hora de crear una aplicación/componente en Django por algún motivo, en el archivo 'base' en config/settings, en 'INSTALLED_APPS', agregar 'components.nombre_nueva_aplicación', y además, dentro de la aplicación creada, en el archivo "apps.py", modificar la variable "name" por name = 'components.nombre_nueva_aplicación'.
