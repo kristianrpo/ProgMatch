@@ -1,0 +1,25 @@
+.containerNavbar{
+    display: flex;
+    align-items: center;
+    margin: 0 9vw;
+}
+.containerNavbar .imgContainer img{
+    width: 60%;
+}
+.containerNavbar .buttonsContainer{
+    display: flex;
+    justify-content: right;
+    width: 100%;
+}
+.containerNavbar .buttonsContainer a{
+    text-decoration: none;
+    margin: 0 1.2vw;
+    padding: 1vw 1.5vw;
+    font-size: 1vw;
+    border-radius: 1vw;
+    background-color: #c71dc7;
+    color: white;
+}
+.containerNavbar .buttonsContainer a:hover{
+    background-color: #e37ae3;
+}
