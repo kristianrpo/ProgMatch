@@ -19,7 +19,17 @@
     border-radius: 1vw;
     background-color: #c71dc7;
     color: white;
+    font-weight: bold;
 }
 .containerNavbar .buttonsContainer a:hover{
     background-color: #e37ae3;
+}
+.containerNavbar .buttonsContainer .whithoutBackground{
+    background: transparent;
+    font-weight: bold;
+    font-size: 1vw;
+    color:black;
+}
+.containerNavbar .buttonsContainer .whithoutBackground:hover{
+    background-color: transparent;
 }
