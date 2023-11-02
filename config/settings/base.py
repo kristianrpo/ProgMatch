@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'components.learningPath',
     'components.student',
     'components.home',
+    'components.authentication'
 ]
 
 MIDDLEWARE = [

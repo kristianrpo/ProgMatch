@@ -1,0 +1,22 @@
+{%extends 'globals/base.html'%}
+{%load static%}
+
+{%block settingsHTML%}
+<link href = "{%static 'CSS/authentication/signUpOptions.css'%}" rel = "stylesheet"/>
+{%endblock settingsHTML%}
+{%block contentHTML%}
+<div class = "generalContainer">
+    <div class = "splitContainer">
+        <div class = "split1">
+            <p>Get access to learning paths tailored to your needs</p>
+            <img src = "{%static 'img/authentication/girl.png'%}"/>
+            <a href = "#">Sign up as student</a>
+        </div>
+        <div class = "split2">
+            <p>Reach more students and get feedback on your courses</p>
+            <img src = "{%static 'img/authentication/boy.png'%}"/>
+            <a href = "#">Sign up as institution</a>
+        </div>
+    </div>
+</div>
+{%endblock contentHTML%}

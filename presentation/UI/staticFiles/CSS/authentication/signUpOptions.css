@@ -1,0 +1,60 @@
+.generalContainer .splitContainer{
+    display: flex;
+    height: 88.1vh;
+    width: 100%;
+}
+.generalContainer .splitContainer .split1{
+    flex:1;
+    height: 88.1vh;
+    background-color: #ffd6ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.generalContainer .splitContainer .split1 img{
+    width: 40%;
+}
+.generalContainer .splitContainer .split2 img{
+    width: 40%;
+}
+.generalContainer .splitContainer .split2{
+    flex:1;
+    height: 88.1vh;
+    background-color: #e37ae3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.generalContainer .splitContainer .split1 a,  .generalContainer .splitContainer .split2 a{
+    text-decoration: none;
+    padding:1vw 1.7vw;
+    background-color: #c71dc7;
+    color: white;
+    font-weight: bold;
+    border-radius: 2vw;
+}
+.generalContainer .splitContainer .split2 a{
+    text-decoration: none;
+    padding:1vw 1.7vw;
+    background-color: #f1a8f1;
+    color: white;
+    font-weight: bold;
+    border-radius: 2vw;
+}
+
+.generalContainer .splitContainer .split1 p{
+    width:20vw;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5vw;
+    color:#c71dc7;
+}
+.generalContainer .splitContainer .split2 p{
+    width:20vw;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5vw;
+    color:#ffd6ff;
+}
