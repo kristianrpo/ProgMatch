@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from domain.useCases.course import courseView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('components.home.urls'))
+    path('admin/', admin.site.urls, name='admin'),
+    path('', include('components.home.urls')),
+    path('course/', courseView.courseView, name='course'),
 ]
