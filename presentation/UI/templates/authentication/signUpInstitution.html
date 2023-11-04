@@ -7,6 +7,16 @@
 {%block contentHTML%}
 <div class = "generalContainer">
     <div class = "space1">
+        <div class = "errors">
+            {%if form.username.errors%}
+                {{ form.username.errors }}
+            {%else%}
+                {% if form.password2.errors%}
+                    {{form.password2.errors}}
+                {%endif%}
+            {%endif%}
+        </div>
+        <br/>
         <h2>Welcome to ProgMatch! Register your institution and expand your educational presence.</h2>
         <div class = "itemsLeft">
             <img src = "{% static 'img/authentication/item1.png'%}" alt = "item1"/>
@@ -33,6 +43,7 @@
     <div class = "space2">
         <div class = "cardSignUp">
             <h1>Let's get started</h1>
+            <br/>
             <form action = "" method = "POST">{% csrf_token %}
                 {{ form.username.label_tag }}<br/>
                 {{ form.username }}<br/>
