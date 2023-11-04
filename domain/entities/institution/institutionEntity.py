@@ -12,4 +12,4 @@ class institution(models.Model):
         app_label = "institution"
         
     def __str__(self):
-        return f"Institution {self.institution.name}"
+        return f"Institution {self.name}"

@@ -10,4 +10,4 @@ class interest(models.Model):
         app_label = "student"
 
     def __str__(self):
-        return f"Interest {self.interest.name}"
+        return f"Interest {self.name}"

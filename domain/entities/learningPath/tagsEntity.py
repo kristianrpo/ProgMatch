@@ -10,4 +10,4 @@ class tags(models.Model):
         app_label = "learningPath"
 
     def __str__(self):
-        return f"Tag {self.tags.name}"
+        return f"Tag {self.name}"

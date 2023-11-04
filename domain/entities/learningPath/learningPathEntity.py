@@ -12,4 +12,4 @@ class learningPath(models.Model):
         app_label = "learningPath"
 
     def __str__(self):
-        return f"Path {self.learningPath.name}"
+        return f"Path {self.name}"

@@ -25,18 +25,18 @@ SECRET_KEY = 'django-insecure-udf0)_nlk8m=^+pk^0l9gp=qxxc1@zg%1h@hjuw4m*iyldsd0_
 # Application definition
 
 INSTALLED_APPS = [
+    'components.course',
+    'components.institution',
+    'components.learningPath',
+    'components.student',
+    'components.home',
+    'components.authentication',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'components.course',
-    'components.institution',
-    'components.learningPath',
-    'components.student',
-    'components.home',
-    'components.authentication'
 ]
 
 MIDDLEWARE = [
@@ -87,6 +87,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'authentication.user'
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -102,6 +104,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-LOGIN_REDIRECT_URL = 'home'  # The URL where users will be redirected after login
-LOGOUT_REDIRECT_URL = 'home'  # The URL where users will be redirected after logout

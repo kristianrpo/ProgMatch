@@ -15,4 +15,4 @@ class review(models.Model):
         app_label = "course"
 
     def __str__(self):
-        return f"Review {self.review.content}"
+        return f"Review {self.content}"

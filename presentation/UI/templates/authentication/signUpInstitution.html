@@ -1,0 +1,13 @@
+{%extends 'globals/base.html'%}
+{%load static%}
+
+{%block settingsHTML%}
+{%endblock settingsHTML%}
+{%block contentHTML%}
+<div class = "generalContainer">
+    <form action = "" method = "POST">{% csrf_token %}
+        {{form}}
+        <button type = "submit" name = "submit">Enviar</button>
+    </form>
+</div>
+{%endblock contentHTML%}

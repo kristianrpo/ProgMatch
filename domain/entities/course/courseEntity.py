@@ -18,4 +18,4 @@ class course(models.Model):
         app_label = "course"
 
     def __str__(self):
-        return f"Course {self.course.name}"
+        return f"Course {self.name}"

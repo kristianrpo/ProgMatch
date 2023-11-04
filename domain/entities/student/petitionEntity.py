@@ -13,5 +13,5 @@ class petition(models.Model):
         app_label = "student"
 
     def __str__(self):
-        return f"Petition for {self.petition.description}"
+        return f"Petition for {self.description}"
     

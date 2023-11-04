@@ -15,8 +15,12 @@
             <a href = "#" class = "whithoutBackground">Home</a>
             <a href = "#" class = "whithoutBackground">Home</a>
             <a href = "#" class = "whithoutBackground">Home</a>
-            <a href = "{%url 'authApp:signUpOptions'%}">Sign up</a>
-            <a href = "#">Log in</a>
+            {% if userObject.is_authenticated %}
+                <a class="nav-link" href="#">Logout ({{ userObject.username }} / {{ userObject.type }})</a>
+            {% else %}
+                <a href = "{%url 'authApp:signUpOptions'%}">Sign up</a>
+                <a href = "#">Log in</a>
+            {% endif %}
         </div>
     </div>
 </body>

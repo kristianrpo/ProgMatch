@@ -11,4 +11,4 @@ class student(models.Model):
         app_label = "student"
 
     def __str__(self):
-        return f"Name {self.student.name}"
+        return f"Name {self.name}"

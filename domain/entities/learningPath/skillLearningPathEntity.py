@@ -10,4 +10,4 @@ class skillLearningPath(models.Model):
         app_label = "learningPath"
 
     def __str__(self):
-        return f"Skill {self.skillLearningPath.name}"
+        return f"Skill {self.name}"
