@@ -12,14 +12,14 @@
             <img src = "{%static 'img/globals/ProgMatch.png'%}" alt = "logo"/>
         </div>
         <div class = "buttonsContainer">
-            <a href = "#" class = "whithoutBackground">Home</a>
+            <a href = "{%url 'homeApp:viewHomePage'%}" class = "whithoutBackground">Home</a>
             <a href = "#" class = "whithoutBackground">Home</a>
             <a href = "#" class = "whithoutBackground">Home</a>
             {% if userObject.is_authenticated %}
-                <a class="nav-link" href="#">Logout ({{ userObject.username }} / {{ userObject.type }})</a>
+                <a class="nav-link" href="{%url 'authApp:logout'%}">Logout ({{ userObject.username }})</a>
             {% else %}
                 <a href = "{%url 'authApp:signUpOptions'%}">Sign up</a>
-                <a href = "#">Log in</a>
+                <a href = "{%url 'authApp:login'%}">Log in</a>
             {% endif %}
         </div>
     </div>
