@@ -1,0 +1,90 @@
+.generalContainer{
+    display: flex;
+    height: 88.1vh;
+    margin: 3vw 9vw;
+    opacity: 0;
+    transition: opacity 1s, transform 1s;
+}
+.generalContainer .space1{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.generalContainer .space2{
+    flex:1.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.generalContainer .space2 .cardSignUp{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 65%;
+    border-radius: 1vw;
+    box-shadow: 0.2vw 0.2vw 1vw #e37ae3;
+}
+.generalContainer .space2 .cardSignUp h1{
+    margin:1vw 0;
+    text-align: center;
+}
+.generalContainer .space2 .cardSignUp input{
+    width: 80%;
+    padding: 10px;
+    margin: 2vh 1vw;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    border:solid rgba(199, 199, 199,0.5) 1px;
+}
+.generalContainer .space2 .cardSignUp label{
+    margin: 5px 1vw;
+    font-size: 0.9vw;
+    color:black;
+    font-weight: bold;
+
+}
+.generalContainer .space2 .cardSignUp .centeredButton{
+    display: flex;
+    justify-content: center;
+}
+
+.generalContainer .space2 .cardSignUp .centeredButton button{
+    text-decoration: none;
+    margin: 0 1.2vw;
+    padding: 1vw 1.5vw;
+    font-size: 1vw;
+    border-radius: 1vw;
+    background-color: #c71dc7;
+    color: white;
+    font-weight: bold;
+    border:none;
+    cursor:pointer;
+}
+.generalContainer .space1 h2{
+    text-align: justify;
+    width: 90%;
+}
+
+.generalContainer .space1 .itemsLeft img{
+    width: 4vw;
+}
+.generalContainer .space1 .itemsLeft{
+    display: flex;
+    margin:3vw 0;
+}
+.generalContainer .space1 .itemsLeft .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left:1vw;
+}
+.generalContainer .space1 .itemsLeft .text h3{
+    font-size: 1.2vw;
+}
+.generalContainer .space1 .itemsLeft .text p{
+    font-size: 1.2vw;
+}
+.animar {
+    opacity: 1;
+}

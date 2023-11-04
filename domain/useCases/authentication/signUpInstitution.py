@@ -14,7 +14,6 @@ class singUpInsitution(CreateView):
     def form_valid(self,form):
         form.instance.type = 'institution'
         userObject = form.save()
-        print(userObject)
         login(self.request, userObject)
         institutionObject = institution(
             institutionCode=form.cleaned_data['institutionCode'], 
