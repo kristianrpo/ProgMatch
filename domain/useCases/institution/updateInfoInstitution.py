@@ -1,5 +1,6 @@
 from django.views.generic import UpdateView
 from domain.entities.institution.institutionEntity import institution
+from django.contrib.auth.password_validation import validate_password
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -36,13 +37,18 @@ class updateInfoInstitution(UpdateView,LoginRequiredMixin):
         if len(self.request.POST.get('oldPassword'))>0 and len(self.request.POST.get('newPassword'))>0:
             userInstance = self.request.user
             if userInstance.check_password(self.request.POST.get('oldPassword')):
-                userInstance.set_password(self.request.POST.get('newPassword'))
-                userInstance.save()
-                login(self.request, userInstance)
+                try: 
+                    validate_password(self.request.POST.get('newPassword'))
+                    userInstance.set_password(self.request.POST.get('newPassword'))
+                    userInstance.save()
+                    login(self.request, userInstance)
 
-                institutionInstance = self.object
-                institutionInstance.password = self.request.POST.get('newPassword')
-                institutionInstance.save()
+                    institutionInstance = self.object
+                    institutionInstance.password = self.request.POST.get('newPassword')
+                    institutionInstance.save()
+                except:
+                    messages.error(self.request, 'La contraseña nueva no es segura')
+                    return redirect('institutionApp:updateInfoInstitution', pk=self.request.user.username)
             else:
                 messages.error(self.request, 'La contraseña antigua es incorrecta.')
                 return redirect('institutionApp:updateInfoInstitution', pk=self.request.user.username)

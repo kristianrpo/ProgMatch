@@ -73,11 +73,11 @@
             <div class = "contentSpace2">
                 {% if messages %}
                 <div class="errors">
-                <ul>
-                    {% for message in messages %}
-                    <li>{{ message }}</li>
-                    {% endfor %}
-                </ul>
+                    <ul>
+                        {% for message in messages %}
+                        <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
                 {% endif %}
                 <form method = "POST">{% csrf_token %}

@@ -154,3 +154,9 @@
     border-radius: 2vw;
     z-index: 2;
 }
+.errors li{
+    text-align: left;
+    color:white;
+    font-weight: bold;
+    margin: 0 1vw;
+}
