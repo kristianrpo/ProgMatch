@@ -89,6 +89,8 @@
 }
 .errors li{
     text-align: left;
+    color:white;
+    font-weight: bold;
 }
 .errors {
     background-color: #e37ae3;
