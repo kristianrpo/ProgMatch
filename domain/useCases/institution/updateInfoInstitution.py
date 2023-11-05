@@ -8,6 +8,46 @@ from django.http import HttpResponseServerError
 from django.urls import reverse_lazy
 from django.contrib.auth import login
 class updateInfoInstitution(UpdateView,LoginRequiredMixin):
+    """
+    Django class-based view for updating institution information and password.
+
+    This view extends Django's `UpdateView` and includes `LoginRequiredMixin` to ensure that only authenticated users
+    can access it.
+
+    Attributes
+    -----------
+        - model: class
+            The model class representing the institution entity.
+        - template_name: str
+            The HTML template used to render the institution information.
+        - fields: tuple 
+            The fields that can be updated in the institution.
+
+    Methods
+    -------
+        - get_context_data(self, **kwargs): 
+            Overrides the base method to add additional context data.
+        - get(self, request, *args, **kwargs): 
+            Overrides the base method to handle GET requests.
+        - form_valid(self, form): 
+            Overrides the base method to handle form validation and updates.
+        - get_success_url(self): 
+            Defines the URL to redirect to after a successful update.
+
+    Usage
+    ------
+        This view allows authenticated users to update their institution information, including name, description,
+        institution code, and email. It also provides the ability to change the password.
+
+        The view checks if the institution name matches the logged-in user's username. If not, it returns an HTTP 500
+        Internal Server Error response.
+
+        When updating the institution name or email, it also updates the associated user model. If a new password is
+        provided, it validates and updates both the user's and institution's passwords.
+
+        If the update is successful, the view redirects to the 'viewInfoInstitution' page for the updated institution.
+
+    """
     model = institution
     template_name = 'institution/accountSettings.html'
     fields = ('name','description','institutionCode','email')
