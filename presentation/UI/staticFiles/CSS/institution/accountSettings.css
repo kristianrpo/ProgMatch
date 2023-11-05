@@ -1,0 +1,156 @@
+.generalContainer{
+    display: flex;
+    margin: 1vw 9vw;
+    height: 81.2vh;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s, transform 1s;
+    border-radius: 2vw;
+    position: relative;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.generalContainer .space1{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #e37ae3;
+    border-radius: 2vw 2vw 0 2vw;
+    border-right: solid #c71dc7 2px;
+}
+.generalContainer .space2{
+    flex:2.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 0 2vw 2vw 0;
+    position:relative;
+}
+.generalContainer .space1 .title h3{
+    font-weight: normal;
+}
+.generalContainer .space1 .title {
+    margin: 1vw;
+    color:white;
+    padding-bottom: 1vw;
+    border-bottom: solid 1px #ffd6ff;
+}
+.generalContainer .space1 .options {
+    height: 100%;
+    margin:1vw;
+    display: flex;
+    flex-direction: column;
+}
+.generalContainer .space1 .options .option{
+    margin-top:1.5vw;
+    color:white;
+    cursor:pointer;
+    text-decoration: none;
+}
+.generalContainer .space1 .options .optionSelected{
+    margin-top:1.5vw;
+    color:black;
+    background-color: #ffd6ff;
+    padding:0.7vw;
+    cursor:pointer;
+    text-decoration: none;
+}
+.generalContainer .space2 .contentSpace2 label{
+    font-weight: bold;
+    font-size: 1.4vw;
+    color:#c71dc7
+}
+.generalContainer .space2 .contentSpace2 p{
+    font-size: 1.2vw;
+    margin-bottom:2vw;
+    color:white;
+}
+#hidePassword {
+    display: none;
+}
+#viewPassword {
+    cursor: pointer;
+    background-color: #c71dc7;
+    padding:1vw;
+    border-radius: 1vw;
+    color:white;
+    border:none;
+}
+#video {
+    width:100%;
+    z-index: -1;
+    object-fit: cover; 
+    border-radius: 0 2vw 2vw 0;
+}
+.generalContainer .space2 .contentSpace2{
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    top:50%;
+    left:50%;
+    border-radius: 0 2vw 2vw 0;
+    padding: 20px;
+}
+.animate {
+    opacity: 1;
+}
+#submit {
+    cursor: pointer;
+    background-color: #c71dc7;
+    padding:1vw;
+    border-radius: 1vw;
+    color:white;
+    border:none;
+}
+.generalContainer .space2 .contentSpace2 input{
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 1vw;
+    color:white;
+    border: solid gray 1px;
+    text-align: center;
+}
+.generalContainer .space2 .contentSpace2 form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.generalContainer .space2 .contentSpace2 .passwords{
+    display: flex;
+
+}
+.generalContainer .space2 .contentSpace2 .passwords .old{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0 1vw;
+}
+.generalContainer .space2 .contentSpace2 .passwords .new{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0 1vw;
+}
+.generalContainer .space2 .contentSpace2 .passwords .old input::placeholder{
+    color:rgb(195, 195, 195);
+}
+.generalContainer .space2 .contentSpace2 .passwords .new input::placeholder{
+    color:rgb(195, 195, 195);
+}
+.errors {
+    background-color: #e37ae3;
+    padding: 0.5vw;
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2vw;
+    z-index: 2;
+}

@@ -15,7 +15,7 @@
             <a href = "{%url 'homeApp:viewHomePage'%}" class = "whithoutBackground">Home</a>
             {%if userObject.is_authenticated%}
                 {%if userObject.type == 'institution'%}
-                    <a href = "#" class = "whithoutBackground">Account settings</a>
+                    <a href = "{%url 'institutionApp:viewInfoInstitution' userObject.username%}" class = "whithoutBackground">Account settings</a>
                 {%endif%}
             <a class="nav-link" href="{%url 'authApp:logout'%}">Logout ({{ userObject.username }})</a>
             {%else%}
