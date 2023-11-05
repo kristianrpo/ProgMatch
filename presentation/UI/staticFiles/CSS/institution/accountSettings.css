@@ -160,3 +160,10 @@
     font-weight: bold;
     margin: 0 1vw;
 }
+.generalContainer .space2 .contentSpace2 span {
+    color:#c71dc7;
+}
+.generalContainer .space2 .contentSpace2 a{
+    color:#e37ae3;
+    margin:1vw;
+}

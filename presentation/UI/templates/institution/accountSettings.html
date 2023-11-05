@@ -19,7 +19,7 @@
             <a href = "{%url 'institutionApp:updateInfoInstitution' user.username%}" class = "option">
                 <h4>Edit account information</h4>
             </a>
-            <a href = "#" class = "option">
+            <a href = "{%url 'institutionApp:deleteInstitution' user.username%}" class = "option">
                 <h4>Delete account</h4>
             </a>
             {%endif%}
@@ -27,10 +27,10 @@
             <a href = "{%url 'institutionApp:viewInfoInstitution' user.username%}" class = "option">
                 <h4>View account information</h4>
             </a>
-            <a href = "#" class = "optionSelected">
+            <a href = "{%url 'institutionApp:updateInfoInstitution' user.username%}" class = "optionSelected">
                 <h4>Edit account information</h4>
             </a>
-            <a href = "#" class = "option">
+            <a href = "{%url 'institutionApp:deleteInstitution' user.username%}" class = "option">
                 <h4>Delete account</h4>
             </a>
             {%endif%}
@@ -38,10 +38,10 @@
             <a href = "{%url 'institutionApp:viewInfoInstitution' user.username%}" class = "option">
                 <h4>View account information</h4>
             </a>
-            <a href = "#" class = "option">
+            <a href = "{%url 'institutionApp:updateInfoInstitution' user.username%}" class = "option">
                 <h4>Edit account information</h4>
             </a>
-            <a href = "#" class = "optionSelected">
+            <a href = "{%url 'institutionApp:deleteInstitution' user.username%}" class = "optionSelected">
                 <h4>Delete account</h4>
             </a>
             {%endif%}
@@ -103,6 +103,15 @@
                     <button type = "submit" id="submit" name = "submit">Update</button>
                 </form>
             </div>
+        {%endif%}
+        {%if buttonOption == 3%}
+        <div class = "contentSpace2">
+            <p>Do you want to delete your account: <span>"{{userObject.username}}"</span>?</p>
+            <form method = "post"> {%csrf_token%}
+                <button type = "submit" id = "submit" name = "submit">Delete</button>
+            </form>
+            <a href = "{%url 'institutionApp:viewInfoInstitution' user.username%}" class = "goBack">Or cancel and go back to your information</a>
+        </div>
         {%endif%}
     </div>
 </div>
