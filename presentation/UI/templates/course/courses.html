@@ -1,0 +1,38 @@
+{% extends 'globals/base.html' %}
+{% load static %}
+
+{% block settingsHTML %}
+<!-- Include any additional CSS files or styles here -->
+{% endblock settingsHTML %}
+
+{% block contentHTML %}
+  <div class="container mx-auto mt-10">
+    <!-- <div class="text-5xl mb-10"><span class="font-extrabold">Welcome! {{ user.username }}</span>, manage your courses</div> -->
+    <div class="text-5xl my-36 text-center"><span class="font-extrabold">Welcome! Universidad EAFIT</span>, manage your courses</div>
+
+    <div class="grid md:grid-cols-3 gap-16">
+      {% for course in courses %}
+        <!-- Each course card -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl flex flex-col">
+          <img class="w-full h-48 object-cover rounded-t-xl" src="https://i.imgur.com/zvrCzWf.png" alt="Course Image"> <!-- Image with more rounded corners and specific height -->
+
+          <div class="flex-grow p-6 flex flex-col justify-between">
+            <div>
+              <div class="font-bold text-xl mb-2">{{ course.name }}</div>
+              <p class="text-gray-700 text-base">
+                {{ course.description }}
+              </p>
+            </div>
+            <div class="mt-4">
+              <!-- Updated 'Go to course' button-like link -->
+              <a href="#" class="bg-indigo-500 text-white font-bold py-2 px-4 rounded hover:bg-indigo-600 transition duration-300 ease-in-out">
+                Go to course
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock contentHTML %}
+

@@ -1,1 +1,27 @@
-Archivo prueba para que aparezca la carpeta en el repositorio
+{% block contentHTML %}
+  <div class="container mx-auto mt-10">
+    {% if user.is_authenticated %}
+      <!-- <div class="text-5xl mb-10"><span class="font-extrabold">Welcome! {{ user.username }}</span>, manage your courses</div> -->
+      <div class="text-5xl mb-10"><span class="font-extrabold">Welcome! EAFIT</span>, manage your courses</div>
+      <div class="grid md:grid-cols-3 gap-4">
+        {% for course in courses %}
+          <!-- Each course card -->
+          <div class="bg-white rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="{% static 'path/to/your/image.jpg' %}" alt="Course Image"> <!-- Replace with your image path or remove if not needed -->
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">{{ course.name }}</div>
+              <p class="text-gray-700 text-base">
+                {{ course.description }}
+              </p>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+              <a href="#" class="text-indigo-500 hover:text-indigo-600 transition duration-300">Go to course</a> <!-- Replace # with the link to your course -->
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      {% else %}
+        <div class="text-5xl mb-10"><span class="font-extrabold">Please Sign Up</div>
+      {% endif %}
+  </div>
+{% endblock contentHTML %}
