@@ -1,1 +1,252 @@
 {%extends 'globals/base.html'%}
+
+{% load static %}
+
+{% block settingsHTML %}
+<!-- Include any additional CSS files or styles here -->
+<link href = "{%static 'CSS/home/home.css'%}" rel = "stylesheet"/>
+<!-- Link Swiper's CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper/swiper-bundle.min.css"
+/>
+
+<!-- Swiper JS -->
+
+{% endblock settingsHTML %}
+
+{% block contentHTML %}
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<div class="full-screen-animated-bg"></div>
+<header class="container mx-auto my-60 text-center px-4 gradient-animated">
+    <h1 class="text-5xl font-bold leading-tight mb-4 text-white text-shadow transition duration-700 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+        Unlock Your Career Potential with <span class="text-blue-200">Personalized Learning Paths </span><br>Powered by AI.
+    </h1>
+    <p class="text-xl text-white leading-relaxed mb-8 text-shadow transition-opacity duration-700">
+        Advance your career with our AI-driven course recommendations. Our smart platform analyzes your professional goals and skills to create a customized learning experience that evolves with you.
+    </p>
+    <div class="flex justify-center items-center space-x-4">
+        <a href="{%url 'authApp:signUpOptions'%}" class="bg-white text-pink-600 px-6 py-3 rounded-md text-lg font-medium hover:bg-pink-200 transition duration-500 ease-in-out transform hover:scale-105">
+            Get started today
+        </a>
+        <a href="#" class="bg-transparent text-white px-6 py-3 border border-white rounded-md text-lg font-medium hover:bg-white hover:text-pink-600 transition duration-500 ease-in-out transform hover:scale-105">
+            Watch video
+        </a>
+    </div>
+</header>
+
+<section class="text-gray-700 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-wrap -m-4">
+        
+        <!-- Start of a single card -->
+        <div class="p-4 md:w-1/3">
+          <div class="h-full bg-white rounded-lg overflow-hidden shadow-lg">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{%static 'img/home/review-image-1.png'%}" alt="testimonial image">
+            <div class="p-6 hover:bg-opacity-50 backdrop-filter backdrop-blur-lg">
+              <h2 class="text-base font-medium text-indigo-300 mb-1">Sofia Martinez</h2>
+              <p class="leading-relaxed mb-3">"Progmatch transformed my learning experience. Their AI-driven recommendations were spot on and helped me excel in my career."</p>
+              <div class="flex items-center flex-wrap ">
+                <a class="text-indigo-300 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+                <span class="text-gray-400 mr-3 inline-flex items-center ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+                    <path d="M1 21h22L12 2 1 21z"></path>
+                  </svg>1.2K Likes
+                </span>
+                <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+                    <path d="M21 15l-5-5L5 21"></path>
+                  </svg>6 Comments
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Start of a single card -->
+        <div class="p-4 md:w-1/3">
+          <div class="h-full bg-white rounded-lg overflow-hidden shadow-lg">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{%static 'img/home/review-image-2.png'%}" alt="testimonial image">
+            <div class="p-6 hover:bg-opacity-50 backdrop-filter backdrop-blur-lg">
+              <h2 class="text-base font-medium text-indigo-300 mb-1">Rashid Al-Khalifa</h2>
+              <p class="leading-relaxed mb-3">"The courses on Progmatch have been a game changer for me. The variety and depth of topics available have broadened my skill set significantly."</p>
+              <div class="flex items-center flex-wrap ">
+                <a class="text-indigo-300 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+                <span class="text-gray-400 mr-3 inline-flex items-center ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+                    <path d="M1 21h22L12 2 1 21z"></path>
+                  </svg>1.57K Likes
+                </span>
+                <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+                    <path d="M21 15l-5-5L5 21"></path>
+                  </svg>43 Comments
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Start of a single card -->
+        <div class="p-4 md:w-1/3">
+          <div class="h-full bg-white rounded-lg overflow-hidden shadow-lg">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{%static 'img/home/review-image-3.png'%}" alt="testimonial image">
+            <div class="p-6 hover:bg-opacity-50 backdrop-filter backdrop-blur-lg">
+              <h2 class="text-base font-medium text-indigo-300 mb-1">Emily Nguyen</h2>
+              <p class="leading-relaxed mb-3">"As a lifelong learner, Progmatch's personalized course paths have been invaluable. The user interface is intuitive and makes learning a breeze."</p>
+              <div class="flex items-center flex-wrap ">
+                <a class="text-indigo-300 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+                <span class="text-gray-400 mr-3 inline-flex items-center ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+                    <path d="M1 21h22L12 2 1 21z"></path>
+                  </svg>213 Likes
+                </span>
+                <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+                    <path d="M21 15l-5-5L5 21"></path>
+                  </svg>86 Comments
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Start of a single card -->
+        <div class="p-4 md:w-1/3">
+          <div class="h-full bg-white rounded-lg overflow-hidden shadow-lg">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{%static 'img/home/review-image-4.png'%}" alt="testimonial image">
+            <div class="p-6 hover:bg-opacity-50 backdrop-filter backdrop-blur-lg">
+              <h2 class="text-base font-medium text-indigo-300 mb-1">John Doe</h2>
+              <p class="leading-relaxed mb-3">"I was skeptical about online learning until I found Progmatch. The community support and expert instructors have made all the difference."</p>
+              <div class="flex items-center flex-wrap ">
+                <a class="text-indigo-300 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+                <span class="text-gray-400 mr-3 inline-flex items-center ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+                    <path d="M1 21h22L12 2 1 21z"></path>
+                  </svg>189K Likes
+                </span>
+                <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+                    <path d="M21 15l-5-5L5 21"></path>
+                  </svg>52 Comments
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Start of a single card -->
+        <div class="p-4 md:w-1/3">
+          <div class="h-full bg-white rounded-lg overflow-hidden shadow-lg">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{%static 'img/home/review-image-5.png'%}" alt="testimonial image">
+            <div class="p-6 hover:bg-opacity-50 backdrop-filter backdrop-blur-lg">
+              <h2 class="text-base font-medium text-indigo-300 mb-1">Aiden Smith</h2>
+              <p class="leading-relaxed mb-3">"Progmatch's flexible learning schedules allowed me to balance my studies with work. Their courses are practical and up-to-date with industry standards."</p>
+              <div class="flex items-center flex-wrap ">
+                <a class="text-indigo-300 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+                <span class="text-gray-400 mr-3 inline-flex items-center ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+                    <path d="M1 21h22L12 2 1 21z"></path>
+                  </svg>172 Likes
+                </span>
+                <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+                    <path d="M21 15l-5-5L5 21"></path>
+                  </svg>59 Comments
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of a single card -->
+        <!-- Start of a single card -->
+        <div class="p-4 md:w-1/3">
+          <div class="h-full bg-white rounded-lg overflow-hidden shadow-lg">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{%static 'img/home/review-image-6.png'%}" alt="testimonial image">
+            <div class="p-6 hover:bg-opacity-50 backdrop-filter backdrop-blur-lg">
+              <h2 class="text-base font-medium text-indigo-300 mb-1">Lena Kozlova</h2>
+              <p class="leading-relaxed mb-3">"The interactive elements and real-world projects on Progmatch have enhanced my learning experience. I feel more confident and skilled in my field now."</p>
+              <div class="flex items-center flex-wrap ">
+                <a class="text-indigo-300 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+                <span class="text-gray-400 mr-3 inline-flex items-center ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+                    <path d="M1 21h22L12 2 1 21z"></path>
+                  </svg>201K Likes
+                </span>
+                <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 mr-1" viewBox="0 0 24 24">
+                    <path d="M21 15l-5-5L5 21"></path>
+                  </svg>4 Comments
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of a single card -->
+  
+        <!-- Repeat the block above for as many testimonials as you have, changing the content accordingly -->
+        
+      </div>
+    </div>
+  </section>
+  
+<!-- Partners Section -->
+<section class="py-12">
+    <div class="container mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center text-white mb-20">
+        Our Partners who inspire learning
+      </h2>
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- Swiper slides -->
+          <div class="swiper-slide flex justify-center items-center">
+            <img src="https://tecnologiaseafit.com/wp-content/uploads/2022/08/Recurso-1-8.png" alt="Partner Logo 1" class="h-20" />
+          </div>
+          <div class="swiper-slide flex justify-center items-center">
+            <img src="https://static.platzi.com/static/images/footer/logo.a76b2a87162b.png" alt="Partner Logo 2" class="h-20" />
+          </div>
+          <div class="swiper-slide flex justify-center items-center">
+            <img src="https://www.eafit.edu.co/nodo/PublishingImages/paginas/nodo/nodo-logo.png" alt="Partner Logo 2" class="h-20" />
+          </div>
+          <div class="swiper-slide flex justify-center items-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Universidad_de_los_Andes_%28logo%29.png" alt="Partner Logo 2" class="h-20" />
+          </div>
+          <div class="swiper-slide flex justify-center items-center">
+            <img src="https://www.magneto365.com/wp-content/uploads/2023/07/logo-oficial-magneto-empresas-1024x538.png" alt="Partner Logo 2" class="h-32" />
+          </div>
+          <div class="swiper-slide flex justify-center items-center">
+            <img src="https://freelogopng.com/images/all_img/1681142382OpenAI-png.png" alt="Partner Logo 2" class="h-32" />
+          </div>
+          <!-- Add more slides as needed -->
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Initialize Swiper -->
+<script src="{%static 'JS/home/home.js'%}"></script>
+
+{% endblock contentHTML %}
