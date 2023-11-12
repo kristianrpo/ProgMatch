@@ -7,22 +7,25 @@
     <link href = "{%static 'CSS/globals/navbar.css'%}" rel = "stylesheet"/>
 </head>
 <body>
-    <div class = "containerNavbar">
-        <div class = "imgContainer">
-            <img src = "{%static 'img/globals/ProgMatch.png'%}" alt = "logo"/>
-        </div>
-        <div class = "buttonsContainer">
-            <a href = "{%url 'homeApp:viewHomePage'%}" class = "whithoutBackground">Home</a>
-            {%if userObject.is_authenticated%}
-                {%if userObject.type == 'institution'%}
-                    <a href = "{%url 'institutionApp:viewInfoInstitution' userObject.username%}" class = "whithoutBackground">Account settings</a>
+    <script src="{%static 'JS/globals/navbar.js'%}"></script>
+    <nav class="sticky top-0 z-50 bg-opacity-50 backdrop-filter backdrop-blur-lg transition duration-300 ease-in-out">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="{%url 'homeApp:viewHomePage'%}">
+                <img src = "{%static 'img/globals/ProgMatch.png'%}" alt="logo" class="h-20" />
+            </a>
+            <div class="flex items-center">
+                <a href="{%url 'homeApp:viewHomePage'%}" class="text-pink-900 hover:text-gray-700 px-3">Home</a>
+                {%if userObject.is_authenticated%}
+                    {%if userObject.type == 'institution'%}
+                        <a href="{%url 'institutionApp:viewInfoInstitution' userObject.username%}" class="text-pink-900 hover:text-gray-700 px-3">Account settings</a>
+                    {%endif%}
+                    <a href="{%url 'authApp:logout'%}" class="text-pink-900 hover:text-gray-700 px-3">Logout ({{ userObject.username }})</a>
+                {%else%}
+                    <a href="{%url 'authApp:login'%}" class="text-pink-900 hover:text-gray-700 ml-4">Sign in</a>
+                    <a href="{%url 'authApp:signUpOptions'%}" class="bg-pink-600 text-white ml-4 px-4 py-2 rounded-md hover:bg-pink-800">Get started today</a>
                 {%endif%}
-            <a class="nav-link" href="{%url 'authApp:logout'%}">Logout ({{ userObject.username }})</a>
-            {%else%}
-                <a href = "{%url 'authApp:signUpOptions'%}">Sign up</a>
-                <a href = "{%url 'authApp:login'%}">Log in</a>
-            {%endif%}
+            </div>
         </div>
-    </div>
+    </nav>
 </body>
 </html> 
