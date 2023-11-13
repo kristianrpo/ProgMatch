@@ -13,7 +13,7 @@ class course(models.Model):
     description = models.CharField(max_length=200, null = True)
     idInstitution = models.ForeignKey(institution, on_delete=models.CASCADE)
     idLearningPath = models.ForeignKey(learningPath, on_delete=models.CASCADE)
-    
+    link = models.CharField(max_length=200)
     class Meta:
         app_label = "course"
 
