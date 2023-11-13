@@ -1,8 +1,7 @@
 from django.db import models
 from domain.entities.institution.institutionEntity import institution
-from domain.entities.learningPath.learningPathEntity import learningPath
 
-class Course(models.Model):
+class course(models.Model):
     DIFFICULTY_CHOICES = [
         ('facil', 'Fácil'),
         ('intermedio', 'Intermedio'),
@@ -18,9 +17,11 @@ class Course(models.Model):
     content = models.CharField(max_length=200, null=True)
     description = models.CharField(max_length=200, null=True)
     idInstitution = models.ForeignKey(institution, on_delete=models.CASCADE)
-    idLearningPath = models.ForeignKey(learningPath, on_delete=models.CASCADE)
     link = models.CharField(max_length=200)
     difficulty = models.CharField(max_length=10, choices=DIFFICULTY_CHOICES)
 
+
+    class Meta:
+        app_label= "course"
     def __str__(self):
         return self.name
