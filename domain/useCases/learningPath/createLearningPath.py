@@ -3,7 +3,7 @@ import time  # Necesario para manejar las pausas entre solicitudes
 
 # Resto del código
 
-openai.api_key = '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'
+openai.api_key = ''
 
 base_de_datos_temporal = {
     "C001": {
