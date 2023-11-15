@@ -5,7 +5,7 @@ from domain.entities.course.courseEntity import course
 class review(models.Model):
     idReview = models.AutoField(primary_key=True)
     score = models.IntegerField()
-    content = models.CharField(max_length=200)
+    content = models.TextField()
     creationDate = models.DateField()
     modificationDate = models.DateField(null = True)
     idStudent = models.ForeignKey(student, on_delete=models.CASCADE)

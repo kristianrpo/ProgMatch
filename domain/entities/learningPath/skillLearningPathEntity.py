@@ -1,10 +1,9 @@
 from django.db import models
-from domain.entities.learningPath.learningPathEntity import learningPath
+
 
 class skillLearningPath(models.Model):
     idSkills = models.AutoField(primary_key=True)
     name = models.CharField(max_length=45)
-    idLearningPath = models.ForeignKey(learningPath,on_delete=models.CASCADE)
 
     class Meta:
         app_label = "learningPath"

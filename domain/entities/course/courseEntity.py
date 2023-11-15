@@ -8,14 +8,13 @@ class course(models.Model):
         ('dificil', 'Difícil'),
     ]
 
-    idCourse = models.AutoField(primary_key=True)
     courseCode = models.CharField(max_length=45)
     name = models.CharField(max_length=100)
     length = models.CharField(max_length=45)
     price = models.FloatField()
     modality = models.CharField(max_length=45)
     content = models.CharField(max_length=200, null=True)
-    description = models.CharField(max_length=200, null=True)
+    description = models.TextField()
     idInstitution = models.ForeignKey(institution, on_delete=models.CASCADE)
     link = models.CharField(max_length=200)
     difficulty = models.CharField(max_length=10, choices=DIFFICULTY_CHOICES)
