@@ -1,9 +1,8 @@
 import openai
-import time  # Necesario para manejar las pausas entre solicitudes
+from domain.entities.course.courseEntity import course
 
-# Resto del código
 
-openai.api_key = ''
+openai.api_key = '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'
 
 base_de_datos_temporal = {
     "C001": {
