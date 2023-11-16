@@ -87,10 +87,10 @@ class updateInfoInstitution(UpdateView,LoginRequiredMixin):
                     institutionInstance.password = self.request.POST.get('newPassword')
                     institutionInstance.save()
                 except:
-                    messages.error(self.request, 'La contraseña nueva no es segura')
+                    messages.error(self.request, 'The new password is not secure.')
                     return redirect('institutionApp:updateInfoInstitution', pk=self.request.user.username)
             else:
-                messages.error(self.request, 'La contraseña antigua es incorrecta.')
+                messages.error(self.request, 'The old password is incorrect.')
                 return redirect('institutionApp:updateInfoInstitution', pk=self.request.user.username)
         return super().form_valid(form)
     
