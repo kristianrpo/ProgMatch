@@ -1,11 +1,13 @@
 .generalContainer{
     opacity: 0;
     transition: opacity 1s, transform 1s;
+    margin:0;
 }
 .generalContainer .splitContainer{
     display: flex;
-    height: 88.1vh;
+    height: 100%;
     width: 100%;
+    margin:0;
 }
 .generalContainer .splitContainer .split1{
     flex:1;
