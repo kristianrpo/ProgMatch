@@ -156,10 +156,10 @@
     font-weight: bold;
     margin: 0 1vw;
 }
-.generalContainer .space2 .contentSpace2 span {
+.generalContainer .space2 .contentSpaceDelete span {
     color:#c71dc7;
 }
-.generalContainer .space2 .contentSpace2 a{
+.generalContainer .space2 .contentSpaceDelete a{
     color:#e37ae3;
     margin:1vw;
 }
@@ -176,4 +176,34 @@
     align-items: center;
     justify-content: center;
     width: 25vw;
+}
+.generalContainer .space2 .contentSpace2 .generalSplit{
+    display: flex;
+    flex-direction: row;
+}
+.generalContainer .space2 .contentSpace2 .generalSplit .split1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25vw;
+}
+.generalContainer .space2 .contentSpace2 .generalSplit .split2{
+    display: flex;
+    flex-direction: column;   
+    align-items: center;
+    justify-content: center;
+    width: 25vw;
+}
+.generalContainer .space2 .contentSpaceDelete{
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 2vw 2vw 0;
+    padding: 20px;
+    flex-direction: column;
+    color:white;
+    font-weight: bold;
+    font-size: 1.2vw;
 }
