@@ -10,4 +10,4 @@ class skillStudent(models.Model):
         app_label = "student"
 
     def __str__(self):
-        return f"Skill {self.name}"
+        return f"{self.name}"

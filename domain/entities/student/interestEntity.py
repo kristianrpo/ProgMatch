@@ -8,4 +8,4 @@ class interest(models.Model):
         app_label = "student"
 
     def __str__(self):
-        return f"Interest {self.name}"
+        return f"{self.name}"

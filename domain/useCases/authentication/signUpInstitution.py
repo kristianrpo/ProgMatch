@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from django.contrib.auth import login
 
-class singUpInsitution(CreateView):
+class signUpInsitution(CreateView):
     """
     View for user signup as an institution.
 
