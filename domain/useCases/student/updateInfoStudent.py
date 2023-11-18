@@ -7,6 +7,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseServerError
 from django.urls import reverse_lazy
 from django.contrib.auth import login
+from domain.entities.student.skillStudentEntity import skillStudent
+from domain.entities.student.interestEntity import interest
 class updateInfoStudent(UpdateView,LoginRequiredMixin):
     """
     Django class-based view for updating student information and password.
@@ -49,7 +51,7 @@ class updateInfoStudent(UpdateView,LoginRequiredMixin):
     """
     model = student
     template_name = 'student/accountSettings.html'
-    fields = ('name','age','email','interest','skill')
+    fields = ('name','age','email')
     context_object_name = "studentObject"
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -92,6 +94,17 @@ class updateInfoStudent(UpdateView,LoginRequiredMixin):
             else:
                 messages.error(self.request, 'The old password is incorrect.')
                 return redirect('studentApp:updateInfoStudent', pk=self.request.user.id)
+            
+        if self.request.POST.get('skill'):
+            skillUpdated = skillStudent.objects.get(idSkillStudent=self.object.skill.all()[0].idSkillStudent)
+            skillUpdated.name = self.request.POST.get('skill')
+            skillUpdated.save()
+
+        if self.request.POST.get('interest'):
+            interestUpdated = interest.objects.get(idInterest=self.object.interest.all()[0].idInterest)
+            interestUpdated.name = self.request.POST.get('interest')
+            interestUpdated.save()
+
         return super().form_valid(form)
     
     def get_success_url(self):

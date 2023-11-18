@@ -80,15 +80,6 @@
         {%endif%}
         {%if buttonOption == 2%}
             <div class = "contentSpace2">
-                {% if messages %}
-                <div class="errors">
-                    <ul>
-                        {% for message in messages %}
-                        <li>{{ message }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
                 <form method = "POST">{% csrf_token %}
                     <div class = "generalSplit">
                         <div class = "split1">
@@ -96,11 +87,12 @@
                             <p>{{form.name}}</p>
                             <label for = "interest">Interest</label>
                             {% for specificInterest in studentObject.interest.all %}
-                                <p>{{specificInterest}}</p>
+                                <input type = "text" value="{{specificInterest}}" name = "interest" id = "interest"/>
                             {% endfor %}
+                            <br/>
                             <label for = "skill">Skills</label>
                             {% for specificSkill in studentObject.skill.all %}
-                            <p>{{specificSkill}}</p>
+                                <input type = "text" value="{{specificSkill}}" name = "skill" id = "skill"/>
                             {% endfor %}
                         </div>
                         <div class = "split2">
@@ -124,6 +116,15 @@
                     <br/>
                     <br/>
                     <button type = "submit" id="submit" name = "submit">Update</button>
+                    {% if messages %}
+                    <div class="errors">
+                        <ul>
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
                 </form>
             </div>
         {%endif%}

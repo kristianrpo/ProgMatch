@@ -29,7 +29,7 @@ class viewInfoStudent(DetailView,LoginRequiredMixin):
     Usage
     -----
         This view displays detailed information about a student. It checks if the logged-in user has access to
-        the student based on the student's name matching the user's username.
+        the student based on the student's id matching the user's id.
 
     If the student name matches the user's username, it renders the template with the student details.
     If not, it returns an HTTP 500 Internal Server Error response.
