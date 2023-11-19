@@ -72,3 +72,7 @@
 .animate {
     opacity: 1;
 }
+.generalContainer .space .cardLogIn h1{
+    font-size: 2vw;
+    font-weight: bold;
+}

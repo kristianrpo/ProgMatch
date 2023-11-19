@@ -1,0 +1,146 @@
+{%extends 'globals/base.html'%}
+{%load static%}
+{%block settingsHTML%}
+<title>Account settings</title>
+<link rel = "stylesheet" href = "{%static 'CSS/student/accountSettings.css'%}"/>
+{%endblock settingsHTML%}
+{%block contentHTML%}
+<div class = "generalContainer">
+    <div class = "space1">
+        <div class = "title">
+            <h2>Account settings</h2>
+            <h3>{{studentObject.name}}</h3>
+        </div>
+        <div class = "options">
+            {%if buttonOption == 1%}
+            <a href = "{%url 'studentApp:viewInfoStudent' user.id%}" class = "optionSelected">
+                <h4>View account information</h4>
+            </a>
+            <a href = "{%url 'studentApp:updateInfoStudent' user.id%}" class = "option">
+                <h4>Edit account information</h4>
+            </a>
+            <a href = "{%url 'studentApp:deleteStudent' user.id%}" class = "option">
+                <h4>Delete account</h4>
+            </a>
+            {%endif%}
+            {%if buttonOption == 2%}
+            <a href = "{%url 'studentApp:viewInfoStudent' user.id%}" class = "option">
+                <h4>View account information</h4>
+            </a>
+            <a href = "{%url 'studentApp:updateInfoStudent' user.id%}" class = "optionSelected">
+                <h4>Edit account information</h4>
+            </a>
+            <a href = "{%url 'studentApp:deleteStudent' user.id%}" class = "option">
+                <h4>Delete account</h4>
+            </a>
+            {%endif%}
+            {%if buttonOption == 3%}
+            <a href = "{%url 'studentApp:viewInfoStudent' user.id%}" class = "option">
+                <h4>View account information</h4>
+            </a>
+            <a href = "{%url 'studentApp:updateInfoStudent' user.id%}" class = "option">
+                <h4>Edit account information</h4>
+            </a>
+            <a href = "{%url 'studentApp:deleteStudent' user.id%}" class = "optionSelected">
+                <h4>Delete account</h4>
+            </a>
+            {%endif%}
+        </div>
+    </div>
+    <div class = "space2">
+        <video autoplay loop muted id = "video">
+            <source src="{%static 'img/institution/backgroundInfo.mp4'%}" type="video/mp4">
+        </video>
+        {%if buttonOption == 1%}
+            <div class = "contentSpace2">
+                <div class = "split1">
+                    <label for = "name">Name</label>
+                    <p>{{studentObject.name}}</p>
+                    <label for = "interest">Interest</label>
+                    {% for specificInterest in studentObject.interest.all %}
+                        <p>{{specificInterest}}</p>
+                    {% endfor %}
+                    <label for = "skill">Skills</label>
+                    {% for specificSkill in studentObject.skill.all %}
+                        <p>{{specificSkill}}</p>
+                    {% endfor %}
+                </div>
+                <div class = "split2">
+                    <label for = "age">Age</label>
+                    <p>{{studentObject.age}}</p>
+                    <label for = "email">Email</label>
+                    <p>{{studentObject.email}}</p>
+                    <label for = "password">Password</label>
+                    <div id="hidePassword">
+                        <p>{{studentObject.password}}</p>
+                    </div>
+                    <button id="viewPassword">View password</button>
+                </div>
+            </div>
+        {%endif%}
+        {%if buttonOption == 2%}
+            <div class = "contentSpace2">
+                <form method = "POST">{% csrf_token %}
+                    <div class = "generalSplit">
+                        <div class = "split1">
+                            <label for = "name">Name</label>
+                            <p>{{form.name}}</p>
+                            <label for = "interest">Interest</label>
+                            {% for specificInterest in studentObject.interest.all %}
+                                <input type = "text" value="{{specificInterest}}" name = "interest" id = "interest"/>
+                            {% endfor %}
+                            <br/>
+                            <label for = "skill">Skills</label>
+                            {% for specificSkill in studentObject.skill.all %}
+                                <input type = "text" value="{{specificSkill}}" name = "skill" id = "skill"/>
+                            {% endfor %}
+                        </div>
+                        <div class = "split2">
+                            <label for = "age">Age</label>
+                            <p>{{form.age}}</p>
+                            <label for = "email">Email</label>
+                            <p>{{form.email}}</p>
+                            <label for = "password">Password</label>
+                            <div class = "passwords">
+                                <div class = "old">
+                                    <label for = "password">Old password</label>
+                                    <input type = "password" name = "oldPassword" id = "oldPassword" placeholder = "only to change password">
+                                </div>
+                                <div class = "new">
+                                    <label for = "password">New password</label>
+                                    <input type = "password" name = "newPassword" id = "newPassword" placeholder = "only to change password">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <button type = "submit" id="submit" name = "submit">Update</button>
+                    {% if messages %}
+                    <div class="errors">
+                        <ul>
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </form>
+            </div>
+        {%endif%}
+        {%if buttonOption == 3%}
+        <div class = "contentSpaceDelete">
+            <p>Do you want to delete your account: <span>"{{userObject.username}}"</span>?</p>
+            <form method = "post"> {%csrf_token%}
+                <button type = "submit" id = "submit" name = "submit">Delete</button>
+            </form>
+            <a href = "{%url 'studentApp:viewInfoStudent' user.id%}" class = "goBack">Or cancel and go back to your information</a>
+        </div>
+        {%endif%}
+    </div>
+</div>
+<script src = "{%static 'JS/institution/visibilityPassword.js'%}">
+</script>
+<script src = "{%static 'JS/authentication/animation.js'%}">
+</script>
+{%endblock contentHTML%}

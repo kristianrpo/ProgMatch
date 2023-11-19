@@ -1,0 +1,64 @@
+{%extends 'globals/base.html'%}
+{%load static%}
+{%block settingsHTML%}
+<title>Sign up student</title>
+<link rel = "stylesheet" href = "{%static 'CSS/authentication/signUpStudent.css'%}"/>
+{%endblock settingsHTML%}
+{%block contentHTML%}
+<div class = "generalContainer">
+    <div class = "space1">
+        <div class = "errors">
+            {%if form.username.errors%}
+                {{ form.username.errors }}
+            {%else%}
+                {% if form.password2.errors%}
+                    {{form.password2.errors}}
+                {%endif%}
+            {%endif%}
+        </div>
+        <br/>
+        <h2>Welcome to ProgMatch! Register your student profile and unlock a world of personalized educational opportunities.</h2>
+        <div class = "itemsLeft">
+            <img src = "{% static 'img/authentication/item1.png'%}" alt = "item1"/>
+            <div class = "text">
+                <h3>Expand your educational horizon</h3>
+                <p>ProgMatch connects you with learning resources tailored to your needs, providing a broader view of available courses and programs.</p>
+            </div>
+        </div>
+        <div class = "itemsLeft">
+            <img src = "{% static 'img/authentication/item2.png'%}" alt = "item1"/>
+            <div class = "text">
+                <h3>Make your educational experience shine.</h3>
+                <p>ProgMatch allows you to distinguish yourself by offering unique, personalized learning paths that align with your academic goals.</p>
+            </div>
+        </div>
+    </div>
+    <div class = "space2">
+        <div class = "cardSignUp">
+            <h1>Let's get started</h1>
+            <br/>
+            <form action = "" method = "POST">{% csrf_token %}
+                {{ form.username.label_tag }}<br/>
+                {{ form.username }}<br/>
+                {{ form.email.label_tag }}<br/>
+                {{ form.email }}<br/>
+                {{ form.password1.label_tag }}<br/>
+                {{ form.password1 }}<br/>
+                {{ form.password2.label_tag }}<br/>
+                {{ form.password2 }} <br/>
+                {{ form.age.label_tag }}<br/>
+                {{ form.age}}<br/>
+                {{ form.skills.label_tag }}<br/>
+                {{ form.skills }}<br/>
+                {{ form.interest.label_tag}}<br/>
+                {{ form.interest}}<br/>
+                <div class = "centeredButton">
+                    <button type = "submit" name = "submit">Create account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src = "{%static 'JS/authentication/animation.js'%}">
+</script>
+{%endblock contentHTML%}
