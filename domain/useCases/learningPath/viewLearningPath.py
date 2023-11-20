@@ -1,13 +1,13 @@
 from .createLearningPath import categorizeCourses
 from django.shortcuts import render
-from domain.entities.course.courseEntity import Course
+from domain.entities.course.courseEntity import course
 
 
 def viewLearningPath(request):
     if request.method == "GET":
         description = request.GET.get('description','')
         difficulty = request.GET.get('option','')
-        temporaryDatabase = Course.objects.all()
+        temporaryDatabase = course.objects.all()
         recommended = categorizeCourses(temporaryDatabase, difficulty, description)
         lengthLearningPath = 2
         recommended['userObject'] = request.user
