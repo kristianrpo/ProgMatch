@@ -9,10 +9,7 @@ def viewLearningPath(request):
         difficulty = request.GET.get('option','')
         temporaryDatabase = course.objects.all()
         recommended = categorizeCourses(temporaryDatabase, difficulty, description)
-        lengthLearningPath = 2
-        #recommended['userObject'] = request.user
-        #recommended['lengthLearningPath'] = range(1,lengthLearningPath+1)
-        #print(recommended)
-        #print(lengthLearningPath)
-        return render(request,'learningPath/viewLearningPath.html')
-    
+        dictionary = {}
+        dictionary['userObject'] = request.user
+        dictionary['courses'] = recommended
+        return render(request,'learningPath/viewLearningPath.html',dictionary)
