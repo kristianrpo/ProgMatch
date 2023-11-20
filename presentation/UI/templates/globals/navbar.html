@@ -18,6 +18,7 @@
                 {%if userObject.is_authenticated%}
                     {%if userObject.type == 'institution'%}
                         <a href="{%url 'institutionApp:viewInfoInstitution' userObject.username%}" class="text-pink-900 hover:text-gray-700 px-3">Account settings</a>
+                        <a href="{%url 'courseApp:courseViewInstitution' userObject.username%}" class="text-pink-900 hover:text-gray-700 px-3">View courses</a>
                     {%endif%}
                     {%if userObject.type == 'student'%}
                         <a href="{%url 'studentApp:viewInfoStudent' userObject.id%}" class="text-pink-900 hover:text-gray-700 px-3">Account settings</a>
