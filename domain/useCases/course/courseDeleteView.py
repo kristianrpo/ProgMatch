@@ -5,4 +5,6 @@ from django.urls import reverse_lazy
 class courseDeleteView(DeleteView):
     model = course
     template_name = 'course/courseDeleteView.html'
-    success_url = reverse_lazy('courseApp:courseViewInstitution')  # URL to redirect after a successful delete
+    
+    def get_success_url(self):
+        return reverse_lazy('courseApp:courseViewInstitution', kwargs={'pk': self.object.idInstitution})
