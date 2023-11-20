@@ -24,9 +24,11 @@ urlpatterns = [
     path('course/', courseViewInstitution.courseViewInstitution, name='course'),
     path('', include('components.authentication.urls')),
     path('', include('components.institution.urls')),
-<<<<<<< HEAD
+
     path('', include('components.course.urls')),
-=======
+
     path('',include('components.student.urls')),
->>>>>>> 85a1ef442e15e1a9686ea48d9677dc0b2454f7e5
+
+    path('', include('components.learningPath.urls'))
+
 ]

@@ -1,0 +1,118 @@
+body{
+    background: linear-gradient(45deg, #c71dc7, #d54bd5, #e37ae3, #f1a8f1, #ffd6ff);
+}
+.generalContainer{
+    display: flex;
+    margin: 0 6vw;
+    position: relative;
+    transition: opacity 1s;
+    opacity: 0;
+}
+.generalContainer .split1{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    flex-direction: column;
+    position: relative;
+}
+.generalContainer .split1 img{
+    width: 35vw;
+}
+.generalContainer .split1 h1{
+    position: absolute;
+    top: 50%;
+    left: 39%;
+    transform: translate(-50%, -50%);
+    font-size: 2vw;
+    font-weight: bold;
+    color:WHITE;
+    text-align: center;
+}
+.generalContainer .split2{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 2px 2px 4px black;
+    border-radius: 2vw;
+}
+.generalContainer .split2 form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1vw 0vw;
+}
+.generalContainer .split2 h1{
+    font-weight: bold;
+    font-size: 2vw;
+}
+.generalContainer .split2 input{
+    padding: 0.5vw 1vw;
+    width:400px;
+    background-color: #f1a8f1;
+    color:white;
+    border-radius: 1vw;
+}
+.generalContainer .split2 input::placeholder{
+    color:white;
+}
+.generalContainer .split2 select{
+    padding: 0.5vw 0vw;
+    width:160px;
+    background-color: #f1a8f1;
+    color:white;
+    border-radius: 1vw;
+    text-align: center;
+}
+.generalContainer .split2 .slider {
+    width: 45vw;
+    height: auto;
+    margin:auto;
+    overflow: hidden;
+ }
+ .generalContainer .split2 .slider .slideTrack {
+    display: flex;
+    animation:scroll 20s linear infinite;
+    -webkit-animation: scroll 20s linear infinite;
+    width: calc(200px*8);
+ }
+ .generalContainer .split2 .slider .slide{
+    width: 200px;
+    background-color: #d54bd5;
+    margin:0.2vw;
+    padding: 0vw 1vw;
+    border-radius: 1vw;
+    text-align: center;
+    color:white;
+ }
+ 
+ .buttonSend{
+    margin: 2vw 0vw;
+    font-size: 1.5vw;
+    padding:0.5vw 1.5vw;
+    border-radius: 1vw;
+    background-color: #e37ae3;
+    color:white;
+    box-shadow: 1px 1px 1px black;
+ }
+ .buttonSend:hover{
+    background-color: #f1a8f1;
+ }
+
+ .animate {
+    opacity: 1;
+}
+
+ @keyframes scroll{
+    0%{
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100%{
+        -webkit-transform: translateX(calc(-200px*4));
+        transform: translateX(calc(-200px*4));
+    }
+ }

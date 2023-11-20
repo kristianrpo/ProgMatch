@@ -58,4 +58,4 @@ class signUpStudent(CreateView):
         studentObject.skill.add(skillObject)
         studentObject.save()
 
-        return redirect(reverse_lazy('homeApp:viewHomePage'))
+        return redirect(reverse_lazy('studentApp:viewHomeStudent'))

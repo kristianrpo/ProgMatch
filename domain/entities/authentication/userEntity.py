@@ -6,7 +6,7 @@ class user(AbstractUser):
     Custom User Model with an additional 'type' attribute.
 
     This custom user model extends Django's AbstractUser model and adds an extra
-    field 'type' to categorize the type of user (e.g., 'admin', 'teacher', 'student').
+    field 'type' to categorize the type of user (e.g., 'admin', 'institution', 'student').
 
     Attributes:
     ----------

@@ -3,9 +3,9 @@ from domain.entities.institution.institutionEntity import institution
 
 class course(models.Model):
     DIFFICULTY_CHOICES = [
-        ('facil', 'Fácil'),
-        ('intermedio', 'Intermedio'),
-        ('dificil', 'Difícil'),
+        ('easy', 'easy'),
+        ('intermediate', 'intermediate'),
+        ('difficult', 'difficult'),
     ]
 
     courseCode = models.CharField(max_length=45)
@@ -17,7 +17,7 @@ class course(models.Model):
     description = models.TextField()
     idInstitution = models.ForeignKey(institution, on_delete=models.CASCADE)
     link = models.CharField(max_length=200)
-    difficulty = models.CharField(max_length=10, choices=DIFFICULTY_CHOICES)
+    difficulty = models.CharField(max_length=100, choices=DIFFICULTY_CHOICES)
 
 
     class Meta:
