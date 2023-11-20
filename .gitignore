@@ -1,3 +1,9 @@
 venv/
 viewMockups/
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+data/
+db.sqlite3
+

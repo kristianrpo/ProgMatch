@@ -28,6 +28,8 @@ def loginFunction(request):
             login(request, user)
             if user.type == "student":
                 return redirect(reverse_lazy('studentApp:viewHomeStudent'))
+            if user.type == "institution":
+                return redirect(reverse_lazy('homeApp:viewHomePage'))
         else:
             return render(request, 'authentication/login.html', {'error': 'Invalid username or password'})
     else:

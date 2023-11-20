@@ -21,6 +21,7 @@
                     {%endif%}
                     {%if userObject.type == 'student'%}
                         <a href="{%url 'studentApp:viewHomeStudent'%}" class="text-pink-900 hover:text-gray-700 px-3">Home</a>
+                        <a href="{%url 'learningPathApp:requestStudent'%}" class="text-pink-900 hover:text-gray-700 px-3">Create learning path</a>
                         <a href="{%url 'studentApp:viewInfoStudent' userObject.id%}" class="text-pink-900 hover:text-gray-700 px-3">Account settings</a>
                     {%endif%}
                     <a href="{%url 'authApp:logout'%}" class="text-pink-900 hover:text-gray-700 px-3">Logout ({{ userObject.username }})</a>
