@@ -1,0 +1,62 @@
+{%extends 'globals/base.html'%}
+
+{% load static %}
+
+{% block settingsHTML %}
+<link href = "{%static 'CSS/learningPath/requestStudent.css'%}" rel = "stylesheet"/>
+{% endblock settingsHTML %}
+
+{% block contentHTML %}
+<div class = "generalContainer">
+    <div class = "split1">
+        <img src = "{%static 'img/learningPath/circle.png'%}"/>
+        <h1>Write what you want to learn</h1>
+    </div>
+    <div class = "split2">
+        <div class = "card">
+            <form method = "get" action = "{%url 'learningPathApp:viewLearningPath'%}">{% csrf_token %}
+                <h1>Description</h1>
+                <input type = "text" name = "description" id = "description" placeholder = "Write your description"/>
+                <br/>
+                <h1>Difficulty</h1>
+                <select class = "filter_compare" name = "option">
+                    <option name = "Easy" id = "Easy" value = "easy">Easy</option>
+                    <option name = "Medium" id = "Medium" value = "medium">Medium</option>
+                    <option name = "Hard" id = "Hard" value = "hard">Hard</option>
+                </select>
+                <button type = "submit" name = "buttonSend" id = "buttonSend" class = "buttonSend">🔍︎</button>
+            </form>
+            <div class = "slider">
+                <div class = "slideTrack">
+                    <div class = "slide">
+                        <p>I want to learn about software development</p>
+                    </div>
+                    <div class = "slide">
+                        <p>I want to learn how to design with photoshop</p>
+                    </div>
+                    <div class = "slide">
+                        <p>I want to learn about digital marketing</p>
+                    </div>
+                    <div class = "slide">
+                        <p>How to create a video game</p>
+                    </div>
+                    <div class = "slide">
+                        <p>I want to learn about software development</p>
+                    </div>
+                    <div class = "slide">
+                        <p>I want to learn how to design with photoshop</p>
+                    </div>
+                    <div class = "slide">
+                        <p>I want to learn about digital marketing</p>
+                    </div>
+                    <div class = "slide">
+                        <p>How to create a video game</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src = "{%static 'JS/authentication/animation.js'%}">
+</script>
+{% endblock contentHTML %}

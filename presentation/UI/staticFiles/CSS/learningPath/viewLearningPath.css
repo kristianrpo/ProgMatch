@@ -1,0 +1,71 @@
+body{
+    background: linear-gradient(45deg, #c71dc7, #d54bd5, #e37ae3, #f1a8f1, #ffd6ff);
+}
+.generalContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 6vw;
+    position: relative;
+}
+.generalContainer .title {
+    font-weight: bold;
+    font-size: 4vw;
+    color:white;
+    text-shadow: 1px 1px 2px #000000;
+}
+.generalContainer .title span{
+    color:#e37ae3;
+}
+.generalContainer .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 69vw;
+    border-radius: 3vw;
+    box-shadow: 5px 3px 7px black;
+    margin-top: 3vw;
+}
+.generalContainer .card img{
+    width: 50px;
+}
+.generalContainer .card .spaceCircle{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.generalContainer .card .spaceCircle .infoContainer{
+    background-color: #e37ae3;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: inherit;
+    right:10vw;
+
+}
+.generalContainer .card .spaceCircle{
+    margin: 2vw 0;
+}
+.generalContainer .card .spaceCircle .circle a{
+    color:white;
+    background-color: #d54bd5;
+    padding: 30px;
+    font-size: 1.5vw;
+    width: fit-content;
+    border-radius: 50%;
+    margin: 2vw 0;
+}
+.generalContainer .card .goal h1{
+    font-size: 1.5vw;
+    color:white;
+    font-weight: bold;
+    padding:2vw;
+    background-color: #f1a8f1;
+    border-radius: 2vw;
+    margin: 1vw
+}

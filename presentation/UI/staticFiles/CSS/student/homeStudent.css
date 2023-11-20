@@ -1,0 +1,104 @@
+body{
+    background: linear-gradient(45deg, #c71dc7, #d54bd5, #e37ae3, #f1a8f1, #ffd6ff);
+}
+
+.generalContainer{
+    height: 100%;
+    background-color: transparent;
+    margin: 0 6vw;
+    transition: opacity 1s;
+    opacity: 0;
+}
+
+.head{
+    display: flex;
+}
+.head .split1{
+    flex: 1.5;
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    flex-direction: column;
+    transition:  0.5s ease-in-out;
+}
+.head .split2{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.head .split2 img{
+    width: 36vw;
+}
+.head .split1 h1{
+    font-weight: bold;
+    font-size: 4.5vw;
+    color:#f1a8f1;
+    text-shadow: 1px 1px 2px #000000;
+}
+.head .split1 h2{
+    font-size: 1.5vw;
+    color:white;
+}
+.head .split1:hover{
+    transform: scale(1.05);
+}
+.head .split1 a{
+    width: fit-content;
+    padding:1vw;
+    border-radius: 2vw;
+    background-color: #d54bd5;
+    color:white;
+    margin: 1vw 0;
+    box-shadow: 0.1vw 0.2vw 0.4vw black;
+}
+.animate {
+    opacity: 1;
+}
+
+
+.settingsAccount{
+    display: flex;
+    margin-top: 5vh;
+}
+
+.split4{
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    transition:  0.5s ease-in-out;
+    margin-left: 5vw;
+}
+.split3{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.split3 img{
+    width: 36vw;
+}
+.split4 h1{
+    font-weight: bold;
+    font-size: 4.5vw;
+    color:#f1a8f1;
+    text-shadow: 1px 1px 2px #000000;
+}
+.split4 h2{
+    font-size: 1.5vw;
+    color:white;
+}
+.split4:hover{
+    transform: scale(1.05);
+}
+.split4 a{
+    width: fit-content;
+    padding:1vw;
+    border-radius: 2vw;
+    background-color: #d54bd5;
+    color:white;
+    margin: 1vw 0;
+    box-shadow: 0.1vw 0.2vw 0.4vw black;
+}

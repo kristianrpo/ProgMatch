@@ -14,17 +14,18 @@
                 <img src = "{%static 'img/globals/ProgMatch.png'%}" alt="logo" class="h-20" />
             </a>
             <div class="flex items-center">
-                <a href="{%url 'homeApp:viewHomePage'%}" class="text-pink-900 hover:text-gray-700 px-3">Home</a>
                 {%if userObject.is_authenticated%}
                     {%if userObject.type == 'institution'%}
                         <a href="{%url 'institutionApp:viewInfoInstitution' userObject.username%}" class="text-pink-900 hover:text-gray-700 px-3">Account settings</a>
                         <a href="{%url 'courseApp:courseViewInstitution' userObject.username%}" class="text-pink-900 hover:text-gray-700 px-3">View courses</a>
                     {%endif%}
                     {%if userObject.type == 'student'%}
+                        <a href="{%url 'studentApp:viewHomeStudent'%}" class="text-pink-900 hover:text-gray-700 px-3">Home</a>
                         <a href="{%url 'studentApp:viewInfoStudent' userObject.id%}" class="text-pink-900 hover:text-gray-700 px-3">Account settings</a>
                     {%endif%}
                     <a href="{%url 'authApp:logout'%}" class="text-pink-900 hover:text-gray-700 px-3">Logout ({{ userObject.username }})</a>
                 {%else%}
+                    <a href="{%url 'homeApp:viewHomePage'%}" class="text-pink-900 hover:text-gray-700 px-3">Home</a>
                     <a href="{%url 'authApp:login'%}" class="text-pink-900 hover:text-gray-700 ml-4">Sign in</a>
                     <a href="{%url 'authApp:signUpOptions'%}" class="bg-pink-600 text-white ml-4 px-4 py-2 rounded-md hover:bg-pink-800">Get started today</a>
                 {%endif%}

@@ -4,10 +4,12 @@ from domain.useCases.course.courseEditView import courseEditView
 from domain.useCases.course.courseDeleteView import courseDeleteView
 from domain.useCases.course.courseCreateView import courseCreateView
 
+from domain.useCases.course.addCourses import populate_database
 app_name = "courseApp"
 urlpatterns = [
     path('courseViewInstitution/<pk>',courseViewInstitution.as_view(),name = "courseViewInstitution"),
     path('courseEditView/<pk>',courseEditView.as_view(),name = "courseEditView"),
     path('courseDeleteView/<pk>',courseDeleteView.as_view(),name = "courseDeleteView"),
     path('courseCreateView/',courseCreateView.as_view(),name = "courseCreateView"),
+    path('populate-database/', populate_database, name='populate_database'),
 ]
