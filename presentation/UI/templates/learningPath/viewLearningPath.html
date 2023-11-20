@@ -1,0 +1,31 @@
+{%extends 'globals/base.html'%}
+
+{% load static %}
+
+{% block settingsHTML %}
+<link href = "{%static 'CSS/learningPath/viewLearningPath.css'%}" rel = "stylesheet"/>
+{% endblock settingsHTML %}
+
+{% block contentHTML %}
+<div class = "generalContainer">
+    <h1 class = "title">
+        This is a learning path for you, <span>{{userObject.username}}</span>
+    </h1>
+    <div class = "card">
+        <br/>
+        {% for i in lengthLearningPath%}
+        <div class = "spaceCircle">
+            <div class = "circle">
+                <a href = "#">{{i}}</a>
+            </div> 
+        </div> 
+        <img src = "{%static 'img/learningPath/route.png'%}"/>
+        {%endfor%}
+        <div class = "goal">
+            <h1>Congratulations!, you have reached the goal</h1>
+        </div>
+    </div>
+</div>
+<script src = "{%static 'JS/authentication/animation.js'%}">
+</script>
+{% endblock contentHTML %}

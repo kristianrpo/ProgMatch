@@ -1,39 +1,81 @@
 import openai
-from domain.entities.course.courseEntity import course
-
+#from domain.entities.course.courseEntity import Course
 
 openai.api_key = ''
 
-base_de_datos_temporal = {
+temporaryDatabase = {
     "C001": {
-        "name": "Introducción a la programación",
-        "length": "8 semanas",
+        "name": "Introduction to Programming",
+        "length": "8 weeks",
         "price": 49.99,
-        "modality": "En línea",
-        "content": "Conceptos básicos de programación",
-        "description": "Aprende los fundamentos de la programación en este curso introductorio.",
+        "modality": "Online",
+        "content": "Basic programming concepts",
+        "description": "Learn the fundamentals of programming in this introductory course.",
         "idInstitution": 1,
         "link": "https://example.com/courses/c001",
-        "difficulty": "facil",
+        "difficulty": "easy",
     },
     "C002": {
-        "name": "Algoritmos avanzados",
-        "length": "12 semanas",
+        "name": "Advanced Algorithms",
+        "length": "12 weeks",
         "price": 79.99,
-        "modality": "Presencial",
-        "content": "Algoritmos avanzados y estructuras de datos",
-        "description": "Explora algoritmos avanzados y técnicas de optimización en este curso avanzado.",
+        "modality": "In-person",
+        "content": "Advanced algorithms and data structures",
+        "description": "Explore advanced algorithms and optimization techniques in this advanced course.",
         "idInstitution": 2,
         "link": "https://example.com/courses/c002",
-        "difficulty": "dificil",
+        "difficulty": "difficult",
     },
-    
+    "C003": {
+    "name": "Web Development with HTML and CSS",
+    "length": "10 weeks",
+    "price": 59.99,
+    "modality": "Online",
+    "content": "Design and development of static web pages",
+    "description": "Learn to create attractive web pages using HTML and CSS in this practical course.",
+    "idInstitution": 3,
+    "link": "https://example.com/courses/c003",
+    "difficulty": "intermediate",
+    },
+    "C004": {
+        "name": "Artificial Intelligence for Beginners",
+        "length": "6 weeks",
+        "price": 39.99,
+        "modality": "Online",
+        "content": "Basic concepts of Artificial Intelligence",
+        "description": "Discover the fundamental concepts of Artificial Intelligence in this beginner-friendly course.",
+        "idInstitution": 1,
+        "link": "https://example.com/courses/c004",
+        "difficulty": "easy",
+    },
+    "C005": {
+        "name": "Object-Oriented Programming with Python",
+        "length": "8 weeks",
+        "price": 69.99,
+        "modality": "Online",
+        "content": "Principles of object-oriented programming (OOP) with Python",
+        "description": "Master the principles of OOP using Python as the programming language in this advanced course.",
+        "idInstitution": 2,
+        "link": "https://example.com/courses/c005",
+        "difficulty": "intermediate",
+    },
+    "C006": {
+        "name": "Mobile App Development with React Native",
+        "length": "14 weeks",
+        "price": 89.99,
+        "modality": "Online",
+        "content": "Construction of cross-platform mobile applications",
+        "description": "Learn to develop mobile applications with React Native and address specific challenges of cross-platform development.",
+        "idInstitution": 3,
+        "link": "https://example.com/courses/c006",
+        "difficulty": "difficult",
+    }
 }
 
-TIEMPO_ENTRE_SOLICITUDES = 2
+timeBetweenRequests = 2
 
-def obtener_respuesta_chatgpt(descripcion, nivel):
-    prompt = f"Usuario: Quiero aprender sobre {descripcion}. Mi nivel de dificultad es {nivel}."
+def getChatGptResponse(userDescription, level):
+    prompt = f"User: I want to learn about {userDescription}. My difficulty level is {level}."
 
     try:
         response = openai.Completion.create(
@@ -47,64 +89,52 @@ def obtener_respuesta_chatgpt(descripcion, nivel):
         if response and response.choices and response.choices[0].text:
             return response.choices[0].text.strip()
         else:
-            print("La respuesta de OpenAI está vacía.")
-            return "No se pudo obtener una respuesta en este momento."
+            print("OpenAI response is empty.")
+            return "Could not get a response at this time."
 
     except openai.error.OpenAIError as e:
-        print(f"Error al llamar a la API de OpenAI: {str(e)}")
-        return "No se pudo obtener una respuesta en este momento."
+        print(f"Error calling the OpenAI API: {str(e)}")
+        return "Could not get a response at this time."
 
+responseCache = {}
 
-cache_respuestas = {}
+def getChatGptResponseCached(userDescription, level):
+    if (userDescription, level) in responseCache:
+        return responseCache[(userDescription, level)]
 
-def obtener_respuesta_chatgpt_cached(descripcion, nivel):
+    chatGptResponse = getChatGptResponse(userDescription, level)
 
-    if (descripcion, nivel) in cache_respuestas:
-        return cache_respuestas[(descripcion, nivel)]
+    responseCache[(userDescription, level)] = chatGptResponse
 
-    respuesta_chatgpt = obtener_respuesta_chatgpt(descripcion, nivel)
+    return chatGptResponse
 
-    cache_respuestas[(descripcion, nivel)] = respuesta_chatgpt
+def filterCourses(courseSet, level, userDescription):
+    recommendedCourses = []
 
-    return respuesta_chatgpt
+    for courseId, courseInfo in courseSet.items():
+        chatGptResponse = getChatGptResponseCached(userDescription, level)
 
-def filtrar_cursos(conjunto_cursos, nivel):
-    cursos_recomendados = []
-
-    for curso_id, curso_info in conjunto_cursos.items():
-        respuesta_chatgpt = obtener_respuesta_chatgpt_cached(curso_info['description'], nivel)
-
-        curso_recomendado = {
-            'nombre': curso_info['name'],
-            'tiempo': curso_info['length'],
-            'modalidad': curso_info['modality'],
-            'precio': curso_info['price'],
-            'descripcion': curso_info['description'],
-            'dificultad': curso_info['difficulty'],
-            'institution': curso_info['idInstitution'],
-            'link':curso_info['link'],
-            'respuesta_chatgpt': respuesta_chatgpt
+        recommendedCourse = {
+            'name': courseInfo['name'],
+            'length': courseInfo['length'],
+            'modality': courseInfo['modality'],
+            'price': courseInfo['price'],
+            'description': courseInfo['description'],
+            'difficulty': courseInfo['difficulty'],
+            'institution': courseInfo['idInstitution'],
+            'link': courseInfo['link'],
+            'chatGptResponse': chatGptResponse
         }
 
-        cursos_recomendados.append(curso_recomendado)
+        recommendedCourses.append(recommendedCourse)
 
-    return cursos_recomendados
+    return recommendedCourses
 
-def powering(conjunto_cursos, nivel):
-    cursos=  filtrar_cursos(conjunto_cursos, nivel)
-    cursos_finales = {'facil':[],'intermedio':[], 'dificil': []}
+def categorizeCourses(courseSet, level, userDescription):
+    courses = filterCourses(courseSet, level, userDescription)
+    finalCourses = {'easy': [], 'intermediate': [], 'difficult': []}
 
-    for i in cursos:
-        cursos_finales[i['dificultad']].append(i)
+    for i in courses:
+        finalCourses[i['difficulty']].append(i)
 
-    return cursos_finales
-
-descripcion_usuario = input("Ingrese la descripción de lo que quiere aprender: ")
-nivel_usuario = input("Ingrese su nivel de dificultad: ")
-
-cursos_recomendados = powering(base_de_datos_temporal, nivel_usuario)
-
-
-
-print("Cursos recomendados:")
-print(cursos_recomendados)
+    return finalCourses

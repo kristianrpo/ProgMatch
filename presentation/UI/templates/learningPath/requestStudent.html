@@ -14,15 +14,15 @@
     </div>
     <div class = "split2">
         <div class = "card">
-            <form method = "post">{% csrf_token %}
+            <form method = "get" action = "{%url 'learningPathApp:viewLearningPath'%}">{% csrf_token %}
                 <h1>Description</h1>
                 <input type = "text" name = "description" id = "description" placeholder = "Write your description"/>
                 <br/>
                 <h1>Difficulty</h1>
                 <select class = "filter_compare" name = "option">
-                    <option name = "Easy" id = "Easy" value = "Easy">Easy</option>
-                    <option name = "Medium" id = "Medium" value = "Medium">Medium</option>
-                    <option name = "Hard" id = "Hard" value = "Hard">Hard</option>
+                    <option name = "Easy" id = "Easy" value = "easy">Easy</option>
+                    <option name = "Medium" id = "Medium" value = "medium">Medium</option>
+                    <option name = "Hard" id = "Hard" value = "hard">Hard</option>
                 </select>
                 <button type = "submit" name = "buttonSend" id = "buttonSend" class = "buttonSend">🔍︎</button>
             </form>
