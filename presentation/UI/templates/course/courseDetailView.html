@@ -33,18 +33,6 @@
           <div><strong>Difficulty:</strong> {{ course.get_difficulty_display }}</div>
         </div>
 
-        <!-- Action Buttons -->
-        <div class="mt-6 flex justify-around">
-          <a href="{{ course.link }}" class="bg-indigo-500 text-white font-bold py-2 px-4 rounded hover:bg-indigo-700 transition duration-300 ease-in-out">
-              Go to course
-          </a>
-          <a href="{% url 'courseApp:courseEditView' course.id %}" class="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600 transition duration-300 ease-in-out">
-              Edit
-          </a>
-          <a href="{% url 'courseApp:courseDeleteView' course.id %}" class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 transition duration-300 ease-in-out">
-              Delete
-          </a>
-        </div>
       </div>
     </div>
   </div>
