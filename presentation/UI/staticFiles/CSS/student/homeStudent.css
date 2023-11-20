@@ -60,16 +60,20 @@ body{
 .settingsAccount{
     display: flex;
     margin-top: 5vh;
+    background-color: #ffd6ff;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .split4{
-    flex: 2;
+    flex: 1.5;
     display: flex;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     flex-direction: column;
     transition:  0.5s ease-in-out;
-    margin-left: 5vw;
+    margin-right: 3vw;
 }
 .split3{
     flex: 1;
@@ -78,7 +82,8 @@ body{
     justify-content: center;
 }
 .split3 img{
-    width: 36vw;
+    width: 30vw;
+    margin: 2vw 0;
 }
 .split4 h1{
     font-weight: bold;
@@ -88,7 +93,7 @@ body{
 }
 .split4 h2{
     font-size: 1.5vw;
-    color:white;
+    color:black;
 }
 .split4:hover{
     transform: scale(1.05);
@@ -101,4 +106,6 @@ body{
     color:white;
     margin: 1vw 0;
     box-shadow: 0.1vw 0.2vw 0.4vw black;
+    text-align: center;
+
 }
