@@ -1,0 +1,25 @@
+{%extends 'globals/base.html'%}
+
+{% load static %}
+
+{% block settingsHTML %}
+<link href = "{%static 'CSS/student/homeStudent.css'%}" rel = "stylesheet"/>
+{% endblock settingsHTML %}
+{% block contentHTML %}
+<div class = "generalContainer">
+    <div class = "head">
+        <div class = "split1">
+            <h1>Meet your goals</h1>
+            <h2>
+                Discover your unique path to knowledge. With our app, every student can create their learning journey tailored to their individual needs. Start your educational journey today!
+            </h2>
+            <a href = "{%url 'learningPathApp:requestStudent'%}">Create learning path</a>
+        </div>
+        <div class = "split2">
+            <img src = "{%static 'img/student/path.png'%}"/>
+        </div>
+    </div>
+</div>
+<script src = "{%static 'JS/authentication/animation.js'%}">
+</script>
+{% endblock contentHTML %}
