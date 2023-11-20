@@ -2,23 +2,22 @@ import openai
 
 openai.api_key = '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'
 
-
 timeBetweenRequests = 2
 
 def getChatGptResponse(userDescription, level):
-    prompt = f"User: I want to learn about {userDescription}. My difficulty level is {level}."
+    prompt = f"User: I want to learn about {userDescription}."
 
     try:
-        response = openai.Completion.create(
-            engine="text-davinci-002",
-            prompt=prompt,
-            temperature=0.7,
-            max_tokens=150,
-            stop=None
+        response = openai.ChatCompletion.create(
+            model="text-davinci-002",
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": prompt}
+            ]
         )
 
-        if response and response.choices and response.choices[0].text:
-            return response.choices[0].text.strip()
+        if response and response['choices'] and response['choices'][0]['message']['content']:
+            return response['choices'][0]['message']['content'].strip()
         else:
             print("OpenAI response is empty.")
             return "Could not get a response at this time."
@@ -40,35 +39,23 @@ def getChatGptResponseCached(userDescription, level):
     return chatGptResponse
 
 def filterCourses(courseSet, level, userDescription):
-    recommendedCourses = []
+    recommendedCourses = {}
 
-    for courseId, courseInfo in courseSet.items():
+    for courseInfo in courseSet.values():
         chatGptResponse = getChatGptResponseCached(userDescription, level)
 
-        recommendedCourse = {
-            'name': courseInfo['name'],
-            'length': courseInfo['length'],
-            'modality': courseInfo['modality'],
-            'price': courseInfo['price'],
-            'description': courseInfo['description'],
-            'difficulty': courseInfo['difficulty'],
-            'institution': courseInfo['idInstitution'],
-            'link': courseInfo['link'],
-            'chatGptResponse': chatGptResponse
-        }
-
-        recommendedCourses.append(recommendedCourse)
+        courseId = courseInfo['id']
+        courseInfo['chatGptResponse'] = chatGptResponse
+        recommendedCourses[courseId] = courseInfo
 
     return recommendedCourses
+
 
 def categorizeCourses(courseSet, level, userDescription):
     courses = filterCourses(courseSet, level, userDescription)
     finalCourses = {'easy': [], 'intermediate': [], 'difficult': []}
 
-    for i in courses:
+    for i in courses.values():
         finalCourses[i['difficulty']].append(i)
 
     return finalCourses
-
-
-
