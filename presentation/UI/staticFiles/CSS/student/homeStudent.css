@@ -3,7 +3,7 @@ body{
 }
 
 .generalContainer{
-    height: 100vh;
+    height: 100%;
     background-color: transparent;
     margin: 0 6vw;
     transition: opacity 1s;
@@ -54,4 +54,51 @@ body{
 }
 .animate {
     opacity: 1;
+}
+
+
+.settingsAccount{
+    display: flex;
+    margin-top: 5vh;
+}
+
+.split4{
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    transition:  0.5s ease-in-out;
+    margin-left: 5vw;
+}
+.split3{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.split3 img{
+    width: 36vw;
+}
+.split4 h1{
+    font-weight: bold;
+    font-size: 4.5vw;
+    color:#f1a8f1;
+    text-shadow: 1px 1px 2px #000000;
+}
+.split4 h2{
+    font-size: 1.5vw;
+    color:white;
+}
+.split4:hover{
+    transform: scale(1.05);
+}
+.split4 a{
+    width: fit-content;
+    padding:1vw;
+    border-radius: 2vw;
+    background-color: #d54bd5;
+    color:white;
+    margin: 1vw 0;
+    box-shadow: 0.1vw 0.2vw 0.4vw black;
 }
