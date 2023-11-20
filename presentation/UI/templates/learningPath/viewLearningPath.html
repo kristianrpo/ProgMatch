@@ -13,19 +13,22 @@
     </h1>
     <div class = "card">
         <br/>
-        {% for i in lengthLearningPath%}
-        <div class = "spaceCircle">
-            <div class = "circle">
-                <a href = "#">{{i}}</a>
+        {% for course in courses%}
+        <div class = "spaceSquare">
+            <div class = "square">
+                <h1>{{course.name}}</h1>
+                <a href = "#">Detail course</a>
             </div> 
         </div> 
-        <img src = "{%static 'img/learningPath/route.png'%}"/>
+        <div class = "line"></div>
+        <div class="triangle"></div>
         {%endfor%}
         <div class = "goal">
             <h1>Congratulations!, you have reached the goal</h1>
         </div>
     </div>
 </div>
+<br/><br/>
 <script src = "{%static 'JS/authentication/animation.js'%}">
 </script>
 {% endblock contentHTML %}
