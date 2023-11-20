@@ -1,0 +1,52 @@
+{% extends 'globals/base.html' %}
+{% load static %}
+
+{% block settingsHTML %}
+<!-- Include any additional CSS files or styles here -->
+{% endblock settingsHTML %}
+
+{% block contentHTML %}
+  <div class="container mx-auto mt-10">
+    <!-- Course Detail Section -->
+    <div class="text-5xl my-10 text-center">
+      <span class="font-extrabold">{{ course.name }}</span>
+    </div>
+
+    <!-- Course Detail Card -->
+    <div class="max-w-4xl mx-auto bg-white rounded-xl overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl">
+      <!-- Placeholder image, replace with your course image if available -->
+      <img class="w-full h-64 object-cover rounded-t-xl" src="https://i.imgur.com/zvrCzWf.png" alt="Course Image">
+      
+      <div class="p-6">
+        <h3 class="font-bold text-2xl mb-2">About this Course</h3>
+        <p class="text-gray-700 text-base mb-4">
+          {{ course.description }}
+        </p>
+
+        <!-- Detailed Information -->
+        <div class="grid grid-cols-2 gap-4">
+          <div><strong>Code:</strong> {{ course.courseCode }}</div>
+          <div><strong>Length:</strong> {{ course.length }}</div>
+          <div><strong>Price:</strong> {{ course.price }}</div>
+          <div><strong>Modality:</strong> {{ course.modality }}</div>
+          <div><strong>Content:</strong> {{ course.content }}</div>
+          <div><strong>Difficulty:</strong> {{ course.get_difficulty_display }}</div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="mt-6 flex justify-around">
+          <a href="{{ course.link }}" class="bg-indigo-500 text-white font-bold py-2 px-4 rounded hover:bg-indigo-700 transition duration-300 ease-in-out">
+              Go to course
+          </a>
+          <a href="{% url 'courseApp:courseEditView' course.id %}" class="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600 transition duration-300 ease-in-out">
+              Edit
+          </a>
+          <a href="{% url 'courseApp:courseDeleteView' course.id %}" class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 transition duration-300 ease-in-out">
+              Delete
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+<br/><br/>
+{% endblock contentHTML %}
