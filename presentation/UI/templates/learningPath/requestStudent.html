@@ -8,10 +8,11 @@
 
 {% block contentHTML %}
 <div class = "generalContainer">
-    <div class = "split1">
-        <img src = "{%static 'img/learningPath/circle.png'%}"/>
-        <h1>Write what you want to learn</h1>
+    <div class="split1">
+        <img src="{% static 'img/learningPath/circle.png' %}"/>
+        <h1><span id="typing-effect"></span></h1>
     </div>
+    
     <div class = "split2">
         <div class = "card">
             <form method = "get" action = "{%url 'learningPathApp:viewLearningPath'%}">{% csrf_token %}
@@ -57,6 +58,31 @@
         </div>
     </div>
 </div>
+<script>
+    const typingText = "Write what you want to learn";
+    const typingSpan = document.getElementById('typing-effect');
+    let index = 0;
+
+    function typeEffect() {
+        if (index < typingText.length) {
+        typingSpan.textContent += typingText.charAt(index);
+        index++;
+        setTimeout(typeEffect, 100);
+        } else {
+        setTimeout(resetTyping, 2000); 
+        }
+    }
+
+    function resetTyping() {
+        typingSpan.textContent = "";
+        index = 0;
+        typeEffect();
+    }
+
+    window.onload = typeEffect;
+</script>
+  
+  
 <script src = "{%static 'JS/authentication/animation.js'%}">
 </script>
 {% endblock contentHTML %}
