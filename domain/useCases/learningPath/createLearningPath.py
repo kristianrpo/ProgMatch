@@ -11,7 +11,7 @@ def getChatGptResponse(userDescription, level, courseSet):
     prompt = (
         f"User: I want to learn about {userDescription}. "
         f"I have this set {course_descriptions}, "
-        f"tell me the courses of the set that are more related to what I want to learn,just give me the descripctions in a list separated by enter. With no text before."
+        f"tell me the courses of the set that are more related to what I want to learn, that have similar context,just give me the descripctions in a list separated by enter. With no text before, but if there are not related discart them."
     )
 
     try:
