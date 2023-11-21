@@ -1,7 +1,7 @@
 import openai
 import ast
 
-openai.api_key = ''
+openai.api_key = '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'
 
 timeBetweenRequests = 2
 

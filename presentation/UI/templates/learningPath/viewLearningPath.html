@@ -17,7 +17,7 @@
         <div class = "spaceSquare">
             <div class = "square">
                 <h1>{{course.name}}</h1>
-                <a href = "#">Detail course</a>
+                <a href = "{%url 'courseApp:courseDetailView' course.id%}">Detail course</a>
             </div> 
         </div> 
         <div class = "line"></div>
