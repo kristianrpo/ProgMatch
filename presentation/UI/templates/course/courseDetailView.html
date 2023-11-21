@@ -33,6 +33,11 @@
           <div><strong>Difficulty:</strong> {{ course.get_difficulty_display }}</div>
         </div>
 
+        <div class="mt-6 flex justify-around">
+          <a href="{% if 'http://' in course.link or 'https://' in course.link %}{{ course.link }}{% else %}http://{{ course.link }}{% endif %}" class="bg-indigo-500 text-white font-bold py-2 px-4 rounded hover:bg-indigo-700 transition duration-300 ease-in-out">
+            Go to course
+        </a>        
+        </div>
       </div>
     </div>
   </div>
