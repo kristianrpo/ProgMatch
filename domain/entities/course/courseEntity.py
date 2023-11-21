@@ -2,6 +2,47 @@ from django.db import models
 from domain.entities.institution.institutionEntity import institution
 
 class course(models.Model):
+    """
+    Django model representing a course entity.
+
+    This model defines the attributes and behavior of a course, including its code, name, length,
+    price, modality, content, description, associated institution, link, and difficulty level.
+
+    Attributes
+    ----------
+        - courseCode: str
+            A character field representing the course code.
+        - name: str
+            A character field representing the course name.
+        - length: str
+            A character field representing the length or duration of the course.
+        - price: float
+            A floating-point field representing the price of the course.
+        - modality: str
+            A character field representing the modality of the course.
+        - content: str (nullable)
+            A character field representing the content of the course (nullable).
+        - description: str
+            A text field providing a detailed description of the course.
+        - idInstitution: ForeignKey
+            A foreign key linking the course to an associated institution.
+        - link: str
+            A character field representing the link or URL of the course.
+        - difficulty: str
+            A character field representing the difficulty level of the course,
+            selected from predefined choices.
+
+    Meta
+    ----
+        - app_label: str
+            The label for the course app.
+
+    Methods
+    -------
+        - __str__():
+            Returns a string representation of the course instance, displaying the course name.
+
+    """
     DIFFICULTY_CHOICES = [
         ('easy', 'easy'),
         ('intermediate', 'intermediate'),
