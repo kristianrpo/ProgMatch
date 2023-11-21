@@ -20,6 +20,7 @@
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">Built With</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#authors">Authors</a></li>
@@ -69,6 +70,8 @@ This innovative platform streamlines the otherwise time-consuming process of man
    python --version
 ```
 5. This should display the installed Python version, confirming a successful installation.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- INSTALLATION -->
 ## Installation
