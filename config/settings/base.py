@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from unipath import Path
+from decouple import config
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).ancestor(3)
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).ancestor(3)
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-udf0)_nlk8m=^+pk^0l9gp=qxxc1@zg%1h@hjuw4m*iyldsd0_'
+SECRET_KEY = config('SECRET_KEY')
 
 # Application definition
 
