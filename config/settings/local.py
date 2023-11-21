@@ -6,8 +6,12 @@ ALLOWED_HOSTS = []
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join('data/db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'progmatchdb',  
+        'USER': 'admin',  
+        'PASSWORD': 'cPHeYJa4r3f4UTecvOVDN36SDHaft26B',
+        'HOST': '35.227.164.209',  
+        'PORT': '5432', 
     }
 }
 
