@@ -6,4 +6,4 @@ __pycache__/
 *.pyd
 data/
 db.sqlite3
-
+.env
