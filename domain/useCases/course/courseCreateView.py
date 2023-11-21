@@ -26,3 +26,8 @@ class courseCreateView(LoginRequiredMixin, CreateView):
         institution_pk = self.object.idInstitution.pk
 
         return reverse('courseApp:courseViewInstitution', kwargs={'pk': institution_pk})
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['userObject'] = self.request.user   
+        return context
