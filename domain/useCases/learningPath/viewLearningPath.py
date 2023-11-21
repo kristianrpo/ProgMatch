@@ -4,7 +4,7 @@ from domain.entities.course.courseEntity import course
 
 
 def viewLearningPath(request):
-     """
+    """
     Django view for displaying a learning path based on user preferences.
 
     This view takes input parameters from a GET request, including 'description' and 'option' (for difficulty).

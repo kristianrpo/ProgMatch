@@ -2,7 +2,7 @@ from django.db import models
 from domain.entities.student.interestEntity import interest
 from domain.entities.student.skillStudentEntity import skillStudent
 class student(models.Model):
-     """
+    """
     Django model representing a student entity.
 
     This model defines the attributes and behavior of a student, including its unique identifier,

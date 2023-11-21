@@ -53,7 +53,6 @@ class courseDetailView(LoginRequiredMixin, DetailView):
     from the database and renders it using the 'course/courseDetailView.html' template. The logged-in user's
     information is also included in the context for potential use in the template.
     """
-    mode
     model = course
     template_name = 'course/courseDetailView.html'
     context_object_name = 'course'
