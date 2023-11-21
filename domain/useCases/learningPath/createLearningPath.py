@@ -1,6 +1,6 @@
 import openai
 import ast
-import spacy
+
 
 openai.api_key = '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'
 
