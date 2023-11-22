@@ -2,7 +2,7 @@ import openai
 import ast
 from decouple import config
 
-OPENAI_API_KEY = config('OPENAI_API_KEY', default='')
+openai.api_key = config('OPENAI_API_KEY', default='')
 
 timeBetweenRequests = 2
 
