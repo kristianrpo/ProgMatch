@@ -127,6 +127,7 @@ This innovative platform streamlines the otherwise time-consuming process of man
 
 <!-- USAGE -->
 ## Usage
+```First, you need to ask one of the authors for the .env file containing the database credentials and the api_key to be able to use natural language processing with OPENAI. Once you have the file, make sure it is called ".env" and place it in the root of the project.```
 * Run django project:
 ```sh
     python manage.py runserver
